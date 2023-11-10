@@ -1,0 +1,27 @@
+.btn-rect {
+  padding: 1.6rem 3.2rem;
+  font-family: "Euclid Circular A";
+  @include font(1.8rem, 125%, 600);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  &:after {
+    content: '';
+    display: block;
+    background-image:  url(./assets/images/btn-arrow.svg);
+    background-repeat: no-repeat;
+    width: 1.8rem;
+    height: 0.8rem;
+    background-size: 100%;
+  }
+  &_dark {
+    background-color: $dark-bg-color;
+    &:hover {
+      background-color: $contrast-color;
+    }
+  }
+  &_purple {
+    background-color: $primary-color;
+  }
+}
