@@ -2,17 +2,13 @@ $octagon-clip-width: 3rem;
 .octagon-card-box {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
 }
 
 .octagon-card {
-  width: calc(100% - 4rem);
-  height: calc(100% - 4rem);
   position: absolute;
-  left: 2rem;
-  top: 2rem;
   background: $dark-purple-bg-color;
-  clip-path: polygon(0 $octagon-clip-width,$octagon-clip-width 0,calc(100% - $octagon-clip-width) 0,100% $octagon-clip-width,100% calc(100% - $octagon-clip-width),calc(100% - $octagon-clip-width) 100%,$octagon-clip-width 100%,0 calc(100% - $octagon-clip-width));
+ @include octagon-bg(1.5rem, 2rem);
 }
 
 .octagon-card-border {
@@ -21,5 +17,5 @@ $octagon-clip-width: 3rem;
   z-index: -1;
   background: rgb(199,255,81);
   background: $border-gradient;
-  clip-path: polygon(0 4.00rem,4.00rem 0,calc(100% - 4.00rem) 0,100% 4.00rem,100% calc(100% - 4.00rem),calc(100% - 4.00rem) 100%,4.00rem 100%,0 calc(100% - 4.00rem),0 4.00rem,0.1rem  calc(4.00rem + 0.04rem),0.1rem calc(100% - 4.00rem - 0.04rem),calc(4.00rem + 0.04rem) calc(100% - 0.1rem),calc(100% - 4.00rem - 0.04rem) calc(100% - 0.1rem),calc(100% - 0.1rem) calc(100% - 4.00rem - 0.04rem),calc(100% - 0.1rem) calc(4.00rem + 0.04rem),calc(100% - 4.00rem - 0.04rem) 0.1rem,calc(4.00rem + 0.04rem) 0.1rem,0.1rem calc(4.00rem + 0.04rem));
+  @include octagon-border(2rem);
 }

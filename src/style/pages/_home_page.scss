@@ -1,5 +1,5 @@
 .main-banner {
-  margin: 17rem 0;
+  margin: 17rem 0 22rem;
   .container {
     position: relative;
   }
@@ -16,7 +16,7 @@
     &-btn {
       position: absolute;
       top: 0;
-      left: 8rem;
+      left: 6rem;
       z-index: 1;
       padding: 1.8rem 3.7rem;
     }
@@ -63,5 +63,70 @@
     height: 77rem;
     top: -10rem;
     right: -9rem;
+  }
+}
+
+.approach {
+  margin-bottom: 20rem;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text {
+    color: $text-color;
+    width: 65rem;
+    br {
+      content: '';
+      display: block;
+      margin: 4rem 0;
+    }
+  }
+  &__img-box {
+    width: 62.7rem;
+    height: 73.1rem;
+    &:hover {
+      .approach__img-card {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+    .octagon-card-border {
+      @include octagon-border(3rem);
+    }
+    .octagon-card {
+      @include octagon-bg(3rem, 3rem);
+      background: #00000000;
+    }
+  }
+  &__info {
+    width: 81rem;
+  }
+  &__title {
+    padding: 3rem 0 4rem;
+    border-bottom: solid 0.1rem transparent;
+    border-image: $border-gradient;
+    border-image-slice: 1;
+    margin-bottom: 6rem;
+  }
+  &__img-card {
+    overflow: hidden;
+    width: 100%;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    transition-property: width, opacity;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in-out;
+    &.hidden {
+      width: 0%;
+      opacity: 0;
+    }
+  }
+  &__img {
+    width: 57rem;
+  }
+  &__svg-card {
+    position: absolute;
+    top: 2rem;
   }
 }

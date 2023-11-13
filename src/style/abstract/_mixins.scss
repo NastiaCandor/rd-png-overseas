@@ -8,3 +8,17 @@
 @mixin media-screen {
   @media (max-width: 48em) { @content; }
 }
+
+@mixin octagon-bg ($size, $padding) {
+  $octagon-clip-width: calc($size * 2);
+  width: calc(100% - $padding * 2);
+  height: calc(100% - $padding * 2);
+  left: $padding;
+  top: $padding;
+  clip-path: polygon(0 $octagon-clip-width,$octagon-clip-width 0,calc(100% - $octagon-clip-width) 0,100% $octagon-clip-width,100% calc(100% - $octagon-clip-width),calc(100% - $octagon-clip-width) 100%,$octagon-clip-width 100%,0 calc(100% - $octagon-clip-width));
+}
+
+@mixin octagon-border ($size) {
+  $width: calc($size * 2);
+  clip-path: polygon(0 $width,$width 0,calc(100% - $width) 0,100% $width,100% calc(100% - $width),calc(100% - $width) 100%,$width 100%,0 calc(100% - $width),0 $width,0.1rem  calc($width + 0.04rem),0.1rem calc(100% - $width - 0.04rem),calc($width + 0.04rem) calc(100% - 0.1rem),calc(100% - $width - 0.04rem) calc(100% - 0.1rem),calc(100% - 0.1rem) calc(100% - $width - 0.04rem),calc(100% - 0.1rem) calc($width + 0.04rem),calc(100% - $width - 0.04rem) 0.1rem,calc($width + 0.04rem) 0.1rem,0.1rem calc($width + 0.04rem));
+}

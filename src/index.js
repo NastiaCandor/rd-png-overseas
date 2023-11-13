@@ -3,3 +3,6 @@ import 'swiper/css/bundle';
 
 // UTILS
 import './js/utils/jquery.mask';
+
+// PAGES
+import './js/pages/home-page';
