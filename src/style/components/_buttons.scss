@@ -1,27 +1,40 @@
 .btn-rect {
-  padding: 1.6rem 3.2rem;
+  padding: 1.6rem 3.4rem;
   font-family: "Euclid Circular A";
   @include font(1.8rem, 125%, 600);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.2rem;
-  &:after {
-    content: '';
-    display: block;
-    background-image:  url(./assets/images/btn-arrow.svg);
-    background-repeat: no-repeat;
-    width: 1.8rem;
-    height: 0.8rem;
-    background-size: 100%;
-  }
+  gap: 1.8rem;
   &_dark {
-    background-color: $dark-bg-color;
+    background-color: $dark-purple-bg-color;
     &:hover {
+      color: $dark-bg-color;
       background-color: $contrast-color;
     }
   }
   &_purple {
     background-color: $primary-color;
+    overflow: hidden;
+    &::before {
+      content: '';
+      display: block;
+      width: 30rem;
+      height: 30rem;
+      position: absolute;
+      top: calc(50% - 15rem);
+      left: calc(50% - 15rem);
+      background: $dark-bg-color;
+      z-index: -1;
+      border-radius: 50%;
+      transform: translateY(18rem);
+      transition: transform 0.7s linear;
+    }
+    &:hover {
+      &::before {
+        transform: translateY(0rem);
+
+      }
+    }
   }
 }

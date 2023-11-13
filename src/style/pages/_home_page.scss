@@ -1,0 +1,54 @@
+.main-banner {
+  margin: 17rem 0;
+  &__title {
+    width: 80rem;
+  }
+  &__wrapper {
+    width: 87.1rem;
+  }
+  &__about {
+    margin-top: 15.5rem;
+    position: relative;
+    padding-top: 2.7rem;
+    &-btn {
+      position: absolute;
+      top: 0;
+      left: 8rem;
+      z-index: 1;
+      padding: 1.8rem 3.7rem;
+    }
+  }
+  &__about-card {
+    width: 100%;
+    height: 24rem;
+    position: relative;
+  }
+  &__about-list {
+    display: flex;
+    padding: 8.5rem 6rem;
+    justify-content: space-between;
+  }
+  &__about-item {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    width: 23rem;
+  }
+  .about-item__text {
+    letter-spacing: 0.09rem;
+  }
+
+  &__planet {
+    background-image: url(./assets/images/planet.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 141%;
+    mix-blend-mode: color-dodge;
+    width: 93rem;
+    mix-blend-mode: color-dodge;
+    position: absolute;
+    height: 77rem;
+    top: 15rem;
+    right: 10rem;
+  }
+}

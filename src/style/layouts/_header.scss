@@ -1,0 +1,45 @@
+.header {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__logo-text {
+    font-family: "Euclid Circular A";
+    @include font(3.3rem, normal, 600);
+  }
+  &__nav {
+    position: relative;
+    padding: 0 9.9rem 0 9.1rem;
+    display: flex;
+    list-style: none;
+    gap: 3.6rem;
+    margin-left: 10rem;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 88rem;
+      height: 11.5rem;
+      top: -1.5rem;
+      left: 3rem;
+      background: $dark-bg-color;
+      transform: perspective(58rem) rotateX(-45deg);
+    }
+    &-item {
+      padding: 3rem 0 2.5rem 0;
+      border-bottom: solid 0.1rem #00000000;
+      transition-property: color, border-bottom;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        color: $contrast-color;
+        border-bottom: solid 0.1rem $contrast-color;
+      }
+    }
+    &-link {
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 .genl-h1-title {
   font-family: "Julius Sans One";
-  @include font(7.2rem, 125%);
+  @include font(7.2rem, 140%);
 }
 
 .genl-h2-title {
@@ -23,17 +23,18 @@
 //   @include font(1.8rem, 140%, 500);
 // }
 
-// .genl-text-1 {
-//   font-family: "Euclid Circular A";
-//   @include font(1.4rem, 150%);
-// }
+.genl-text-reg {
+  font-family: "Euclid Circular A";
+  @include font(1.8rem, 135%);
+}
 
 // .genl-text-2 {
 //   font-family: "Euclid Circular A";
 //   @include font(1.4rem, 143%, 600);
 // }
 
-// .genl-numeric {
-//   font-family: "Euclid Circular A";
-//   @include font(3.2rem, 105%, 700);
-// }
+.genl-numeric {
+  font-family: "Euclid Circular A";
+  color: $contrast-color;
+  @include font(5.5rem, 125%, 700);
+}

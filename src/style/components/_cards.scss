@@ -1,0 +1,26 @@
+$octagon-clip-width: 3rem;
+.octagon-card-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.octagon-card {
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  position: absolute;
+  z-index: -1;
+  left: 2rem;
+  top: 2rem;
+  background: $dark-purple-bg-color;
+  clip-path: polygon(0 $octagon-clip-width,$octagon-clip-width 0,calc(100% - $octagon-clip-width) 0,100% $octagon-clip-width,100% calc(100% - $octagon-clip-width),calc(100% - $octagon-clip-width) 100%,$octagon-clip-width 100%,0 calc(100% - $octagon-clip-width));
+}
+
+.octagon-card-border {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgb(199,255,81);
+  background: linear-gradient(145deg, rgba(199,255,81,1) 0%, rgba(186,119,253,1) 100%);
+  clip-path: polygon(0 4.00rem,4.00rem 0,calc(100% - 4.00rem) 0,100% 4.00rem,100% calc(100% - 4.00rem),calc(100% - 4.00rem) 100%,4.00rem 100%,0 calc(100% - 4.00rem),0 4.00rem,0.1rem  calc(4.00rem + 0.04rem),0.1rem calc(100% - 4.00rem - 0.04rem),calc(4.00rem + 0.04rem) calc(100% - 0.1rem),calc(100% - 4.00rem - 0.04rem) calc(100% - 0.1rem),calc(100% - 0.1rem) calc(100% - 4.00rem - 0.04rem),calc(100% - 0.1rem) calc(4.00rem + 0.04rem),calc(100% - 4.00rem - 0.04rem) 0.1rem,calc(4.00rem + 0.04rem) 0.1rem,0.1rem calc(4.00rem + 0.04rem));
+}
