@@ -1,5 +1,8 @@
 .main-banner {
   margin: 17rem 0;
+  .container {
+    position: relative;
+  }
   &__title {
     width: 80rem;
   }
@@ -25,7 +28,7 @@
   }
   &__about-list {
     display: flex;
-    padding: 8.5rem 6rem;
+    padding: 6.5rem 3rem 6.5rem 4rem;
     justify-content: space-between;
   }
   &__about-item {
@@ -36,6 +39,16 @@
   }
   .about-item__text {
     letter-spacing: 0.09rem;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 4rem;
+      height: 0.1rem;
+      background: $contrast-color;
+      bottom: -1rem;
+    }
   }
 
   &__planet {
@@ -48,7 +61,7 @@
     mix-blend-mode: color-dodge;
     position: absolute;
     height: 77rem;
-    top: 15rem;
-    right: 10rem;
+    top: -10rem;
+    right: -9rem;
   }
 }
