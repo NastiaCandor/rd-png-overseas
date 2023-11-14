@@ -22,3 +22,8 @@
   $width: calc($size * 2);
   clip-path: polygon(0 $width,$width 0,calc(100% - $width) 0,100% $width,100% calc(100% - $width),calc(100% - $width) 100%,$width 100%,0 calc(100% - $width),0 $width,0.1rem  calc($width + 0.04rem),0.1rem calc(100% - $width - 0.04rem),calc($width + 0.04rem) calc(100% - 0.1rem),calc(100% - $width - 0.04rem) calc(100% - 0.1rem),calc(100% - 0.1rem) calc(100% - $width - 0.04rem),calc(100% - 0.1rem) calc($width + 0.04rem),calc(100% - $width - 0.04rem) 0.1rem,calc($width + 0.04rem) 0.1rem,0.1rem calc($width + 0.04rem));
 }
+
+@mixin home-slide-transition {
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}

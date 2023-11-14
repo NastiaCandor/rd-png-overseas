@@ -8,7 +8,7 @@ $octagon-clip-width: 3rem;
 .octagon-card {
   position: absolute;
   background: $dark-purple-bg-color;
- @include octagon-bg(1.5rem, 2rem);
+  @include octagon-bg(1.5rem, 2rem);
 }
 
 .octagon-card-border {

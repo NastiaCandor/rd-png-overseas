@@ -16,6 +16,7 @@
   &_purple {
     background-color: $primary-color;
     overflow: hidden;
+    position: absolute;
     &::before {
       content: '';
       display: block;
@@ -33,7 +34,6 @@
     &:hover {
       &::before {
         transform: translateY(0rem);
-
       }
     }
   }
