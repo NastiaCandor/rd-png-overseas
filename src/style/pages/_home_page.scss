@@ -132,7 +132,7 @@
 }
 
 .services {
-  margin-bottom: 10rem;
+  margin-bottom: 26rem;
   .container {
     width: 100%;
   }
@@ -157,6 +157,7 @@
   }
   &__text-who {
     margin: 1rem 0 2rem 0;
+    color: $contrast-color;
   }
   &__slider-wrapper {
     overflow: hidden;
@@ -216,7 +217,7 @@
       height: 36rem;
       overflow: hidden;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
       transition-property: height;
       @include home-slide-transition;
@@ -284,4 +285,224 @@
   .services__swiper-btns {
     margin: 5rem 0 0 -2rem;
   }
+}
+
+.advantages {
+  margin-bottom: 21rem;
+  &__title {
+    margin-bottom: 6rem;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list {
+    width: 62.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    &-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      gap: 2.5rem;
+      padding: 2rem 3rem;
+      cursor: pointer;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        opacity: 0;
+        background: $border-gradient;
+        @include octagon-border(1rem);
+        transition-property: opacity;
+        @include advantages-transition;
+      }
+      &.active {
+        &::after {
+          opacity: 1;
+          background: $border-gradient;
+        }
+      }
+    }
+    &-icon {
+      width: 4.6rem;
+      height: 4.6rem;
+    }
+    &-text {
+      width: 50rem;
+    }
+  }
+  &__display {
+    width: 76rem;
+    &-title-list {
+      margin-bottom: 3rem;
+      transition-property: height;
+      @include advantages-transition;
+      position: relative;
+    }
+    &-title {
+      opacity: 0;
+      width: 67.7rem;
+      position: absolute;
+      transition-property: opacity;
+      @include advantages-transition;
+      &.active {
+        opacity: 1;
+      }
+    }
+    &-text-list {
+      transition-property: height;
+      position: relative;
+      @include advantages-transition;
+    }
+    &-text {
+      opacity: 0;
+      position: absolute;
+      transition-property: opacity;
+      @include advantages-transition;
+      &.active {
+        opacity: 1;
+      }
+      br {
+        content: '';
+        display: block;
+        margin: 2rem 0;
+      }
+    }
+  }
+  &__more-box {
+    margin-top: 6rem;
+  }
+}
+
+.plan {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info {
+    width: 62.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    border-bottom: solid 0.1rem $primary-color;
+    padding-bottom: 13.5rem;
+    margin-bottom: 13.5rem;
+  }
+  &__text {
+    margin-top: auto;
+    br {
+      content: '';
+      display: block;
+      margin: 2rem 0;
+    }
+  }
+  &__graph-wrapper {
+    display: flex;
+    width: 81rem;
+    justify-content: space-between;
+  }
+  &__graph {
+    width: 36rem;
+    &-title {
+      text-align: center;
+    }
+  }
+  &__pie {
+    position: relative;
+    height: 38rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  &__circle-box {
+    position: absolute;
+    top: 0;
+  }
+  &__graph-subblock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__graph-subtext {
+    &_purple {
+      span {
+        color: $primary-color;
+      }
+    }
+    &_green {
+      span {
+        color: $contrast-color;
+      }
+    }
+  }
+  &__graph-percent {
+    line-height: 80%;
+  }
+}
+
+// Pie diagram display
+
+@property --p {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.plan__circle {
+  --p: 20;
+  --b: 0.7rem;
+  --c: #C7FF51;
+  --w: 36rem;
+  --h: 100;
+  --k: #BA77FD;
+  
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+}
+.plan__circle:before, .plan__circle:after {
+  content:"";
+  position:absolute;
+  border-radius:50%;
+}
+.plan__circle:before {
+  display: none;
+  inset:0;
+  background:
+    radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+          mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.plan__circle:after {
+  inset:0;
+  background:
+    radial-gradient(farthest-side,var(--k) 98%,#0000) top/var(--b) var(--b) no-repeat,
+    conic-gradient(var(--k) calc(var(--h)*1%),#0000 0);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+          mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.animate-plan-circle {
+  animation:p 5s 0.5s both;
+  &::before {
+    display: block;
+  }
+}
+.plan__circle:before {
+  background-size:0 0,auto;
+  z-index: 1;
+}
+
+@keyframes p {
+  from{--p:0}
 }

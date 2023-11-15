@@ -1,3 +1,4 @@
+import $ from "jquery";
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation} from 'swiper/modules';
@@ -5,7 +6,7 @@ import { Navigation} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 // Hide construction img
-const options = { threshold: [0.5] };
+const options = { threshold: [0.9] };
 const constructObserver = new IntersectionObserver(approachContractionShow, options);
 const constructionImg = document.querySelector('.approach__img-card');
 
@@ -68,29 +69,112 @@ if (servicesSwiperBlock) {
 
 const optionsSliderObserver = { 
   threshold: [0],
-  // root: null,
-  // root: document.querySelector('.swiper-wrapper'),
-  // rootMargin: '10px 0',
 };
 const servicesSlidesObserver = new IntersectionObserver(hideServicesSlides, optionsSliderObserver);
 const servicesSlides = document.querySelectorAll('.swiper-slide');
-console.log(servicesSlides);
 
 function hideServicesSlides(entry) {
-  console.log(entry);
   entry.forEach(slide => {
     if (slide.isIntersecting) {
-      // slide.target.classList.add('hidden');
       slide.target.classList.remove('hidden');
     } else {
-      // slide.target.classList.remove('hidden');
       slide.target.classList.add('hidden');
     }
   });
 }
 
 servicesSlides.forEach(slide => {
-  // slide.classList.remove('hidden');
   slide.classList.add('hidden');
   servicesSlidesObserver.observe(slide);
 });
+
+// Advantages
+const advanItems = document.querySelectorAll('.advantages__list-item');
+const advanTitles = document.querySelectorAll('.advantages__display-title');
+let advanCurrId = '0';
+let advanTitleMap = new Map();
+const advanTextMap = new Map();
+const titleHeight = $('.advantages__display-title[data-advantages="0"]').css('height');
+$('.advantages__display-title-list').css('height', titleHeight);
+const textHeight = $('.advantages__display-text[data-advantages="0"]').css('height');
+$('.advantages__display-text-list').css('height', textHeight);
+
+const changeAdvanInfo = (item, id) => {
+  $(`.advantages__list-item[data-advantages="${advanCurrId}"]`)[0].classList.remove('active');
+  item.classList.add('active');
+  $(`.advantages__display-title[data-advantages="${advanCurrId}"]`)[0].classList.remove('active');
+  item.classList.add('active');
+  $(`.advantages__display-text[data-advantages="${advanCurrId}"]`)[0].classList.remove('active');
+
+  item.classList.add('active');
+
+  const title = advanTitleMap.get(item);
+  const text = advanTextMap.get(item);
+
+  title[0].classList.add('active');
+  text[0].classList.add('active');
+
+  const titleHeight = title.css('height');
+  $('.advantages__display-title-list').css('height', titleHeight);
+  const textHeight = text.css('height');
+  $('.advantages__display-text-list').css('height', textHeight);
+
+  advanCurrId = id;
+};
+
+advanItems.forEach((item, ind) => {
+  const id = item.getAttribute('data-advantages');
+  advanTitleMap.set(item, $(`.advantages__display-title[data-advantages="${id}"]`));
+  advanTextMap.set(item, $(`.advantages__display-text[data-advantages="${id}"]`));
+  item.addEventListener('click', (e) => {
+    changeAdvanInfo(item, id);
+  });
+});
+
+// Graph section animation
+const planSection = document.querySelector('.plan');
+const graphPrecentList = document.querySelectorAll('.plan__graph-percent');
+const pieDiagramList = document.querySelectorAll('.plan__circle');
+const optionsGraphObserver = { 
+  threshold: [0.95],
+};
+const graphObserver = new IntersectionObserver(animateGraphSection, optionsGraphObserver);
+
+function animateGraphSection(entry) {
+  entry.forEach(item => {
+    if (item.isIntersecting) {
+      if (!graphPrecentList[0].classList.contains('done')) {
+        graphPrecentList.forEach((el) => {
+          animatePieNumber(el);
+          el.classList.add('done');
+        })
+      }
+      pieDiagramList.forEach((el) => {
+        animatePieDiagram(el);
+      })
+    }
+  });
+}
+graphObserver.observe(planSection);
+
+function animatePieDiagram (item) {
+  item.classList.add('animate-plan-circle');
+}
+
+function animatePieNumber(item) {
+  let start = 0;
+  const end = Number(item.getAttribute('data-dev-number'));
+  const time = 5000;
+  const step = 0.1;
+  const fraction = Math.round(time / (end * 10));
+  let startTime = 0;
+  for (let i = 0; i < (end * 10); i++) {
+    setTimeout(() => {
+      start = start + step;
+      item.textContent = `${start.toFixed(1).toString().replace('.', ',')}%`;
+    }, startTime);
+    startTime += fraction;
+  }
+
+  console.log(fraction);
+}
