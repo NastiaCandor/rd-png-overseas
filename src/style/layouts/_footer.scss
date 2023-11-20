@@ -1,0 +1,17 @@
+.footer {
+  background: $dark-bg-color;
+  clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 8rem 0;
+  }
+  &__nav {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+  }
+  &__contact-btn {
+    margin-left: -11rem;
+  }
+}

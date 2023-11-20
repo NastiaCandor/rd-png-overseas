@@ -16,7 +16,8 @@
   &_purple {
     background-color: $primary-color;
     overflow: hidden;
-    position: absolute;
+    position: relative;
+    z-index: 0;
     &::before {
       content: '';
       display: block;

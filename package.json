@@ -40,9 +40,9 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "jquery": "^3.7.1",
     "jquery-mask-plugin": "^1.14.16",
     "swiper": "^11.0.3"
   }
 }
-

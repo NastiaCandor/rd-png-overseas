@@ -1,10 +1,11 @@
 import $ from "jquery";
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
-import { Navigation} from 'swiper/modules';
+import { Navigation, EffectCoverflow} from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+
 // Hide construction img
 const options = { threshold: [0.9] };
 const constructObserver = new IntersectionObserver(approachContractionShow, options);
@@ -60,6 +61,7 @@ if (servicesSwiperBlock) {
     modules: [Navigation],
     slidesPerView: 'auto',
     spaceBetween: '2%',
+    grabCursor: true,
     navigation: {
       nextEl: '.services__swiper-btn-next',
       prevEl: '.services__swiper-btn-prev',
@@ -69,6 +71,7 @@ if (servicesSwiperBlock) {
 
 const optionsSliderObserver = { 
   threshold: [0],
+  root: document.querySelector('.services__slider-wrapper'),
 };
 const servicesSlidesObserver = new IntersectionObserver(hideServicesSlides, optionsSliderObserver);
 const servicesSlides = document.querySelectorAll('.swiper-slide');
@@ -164,7 +167,7 @@ function animatePieDiagram (item) {
 function animatePieNumber(item) {
   let start = 0;
   const end = Number(item.getAttribute('data-dev-number'));
-  const time = 5000;
+  const time = 3000;
   const step = 0.1;
   const fraction = Math.round(time / (end * 10));
   let startTime = 0;
@@ -177,4 +180,20 @@ function animatePieNumber(item) {
   }
 
   console.log(fraction);
+}
+
+// NEWS Slider
+
+const newsSlider = document.querySelector('.news__slider');
+if (newsSlider) {
+  new Swiper('.news__slider', {
+    modules: [Navigation],
+    slidesPerView: 6,
+    spaceBetween: 30,
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.news__swiper-btn-next',
+      prevEl: '.news__swiper-btn-prev',
+    },
+});
 }
