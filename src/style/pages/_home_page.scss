@@ -258,29 +258,30 @@
 // Slider services
 .services__slider-wrapper {
   padding-left: 18rem;
-  padding-left: 20rem;
   max-width: 192rem;
   margin: 0 auto;
   margin-top: 5rem;
 }
 .services__slider {
   .swiper-wrapper {
-    margin-left: -62rem;
-    margin-left: -2rem;
+    // margin-left: -62rem;
+    // margin-left: -2rem;
   }
   .swiper-slide {
     width: auto;
-    transition: opacity 0.5s ease-in-out;
-    &:last-child {
-      width: 62rem;
-      width: min(63rem, 31.5vw);
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transform: translateX(0rem);
+    &.last {
+      transform: translateX(-20rem);
     }
     &.hidden {
       opacity: 0;
     }
   }
   .services__swiper-btns {
-    margin: 5rem 0 0 -2rem;
+    margin: 5rem 0 0 0;
   }
 }
 

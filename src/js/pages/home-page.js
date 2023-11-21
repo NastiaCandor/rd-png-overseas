@@ -25,41 +25,10 @@ constructObserver.observe(constructionImg);
 
 const servicesSwiperBlock = document.querySelector('.services__slider');
 
-// First option slider
-
-// if (servicesSwiperBlock) {
-//   const servicesSwiper = new Swiper('.services__slider', {
-//     modules: [Navigation],
-//     slidesPerView: 'auto',
-//     // slidesPerView: 4,
-//     centeredSlides: true,
-//     // cssMode: true,
-//     spaceBetween: '2%',
-//     // Navigation arrows
-//     navigation: {
-//       nextEl: '.services__swiper-btn-next',
-//       prevEl: '.services__swiper-btn-prev',
-//     },
-//     effect: 'creative',
-//     creativeEffect: {
-//       prev: {
-//         // will set `translateX(100%)` on next slides
-//         translate: ['100%', 0, 0],
-//       },
-//       next: {
-//         // will set `translateX(100%)` on next slides
-//         translate: ['100%', 0, 0],
-//       },
-//     },
-//   });
-// }
-
-// Second option
-
 if (servicesSwiperBlock) {
   const servicesSwiper = new Swiper('.services__slider', {
     modules: [Navigation],
-    slidesPerView: 'auto',
+    slidesPerView: '3.4',
     spaceBetween: '2%',
     grabCursor: true,
     navigation: {
@@ -74,7 +43,7 @@ const optionsSliderObserver = {
   root: document.querySelector('.services__slider-wrapper'),
 };
 const servicesSlidesObserver = new IntersectionObserver(hideServicesSlides, optionsSliderObserver);
-const servicesSlides = document.querySelectorAll('.swiper-slide');
+const servicesSlides = document.querySelectorAll('.services__swiper-slide');
 
 function hideServicesSlides(entry) {
   entry.forEach(slide => {
@@ -90,6 +59,32 @@ servicesSlides.forEach(slide => {
   slide.classList.add('hidden');
   servicesSlidesObserver.observe(slide);
 });
+
+const servicesNextBtn = document.querySelector('.services__swiper-btn-next');
+const servicesPrevBtn = document.querySelector('.services__swiper-btn-prev');
+
+const servicesLastMove = (mutationsList, observer) => {
+  for (let mutation of mutationsList) {
+    if (mutation.type === 'attributes') {
+      if (mutation.attributeName !== 'class') return;
+      if (!mutation.target.classList.contains('swiper-button-disabled')) {
+        servicesSlides.forEach((slide) => {
+          slide.classList.remove('last');
+        });
+      } else {
+        servicesSlides.forEach((slide) => {
+          slide.classList.add('last');
+        });
+      }
+    }
+  }
+}
+const servicesLastOptions = {
+  attributes: true,
+  attributeOldValue: true
+}
+const servicesLastSlideObserver = new MutationObserver(servicesLastMove);
+servicesLastSlideObserver.observe(servicesNextBtn, servicesLastOptions);
 
 // Advantages
 const advanItems = document.querySelectorAll('.advantages__list-item');
@@ -178,8 +173,6 @@ function animatePieNumber(item) {
     }, startTime);
     startTime += fraction;
   }
-
-  console.log(fraction);
 }
 
 // NEWS Slider

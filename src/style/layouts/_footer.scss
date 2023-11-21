@@ -10,6 +10,14 @@
     display: flex;
     gap: 4rem;
     align-items: center;
+    &-item {
+      transition-property: color;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        color: $contrast-color;
+      }
+    }
   }
   &__contact-btn {
     margin-left: -11rem;
