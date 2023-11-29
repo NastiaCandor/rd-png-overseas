@@ -7,19 +7,46 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 // Hide construction img
-const options = { threshold: [0.9] };
-const constructObserver = new IntersectionObserver(approachContractionShow, options);
-const constructionImg = document.querySelector('.approach__img-card');
+$(document).ready(function () {
+  if (!document.querySelector('.approach__img-card')) return;
+  const options = { threshold: [0.9] };
+  const constructObserver = new IntersectionObserver(approachContractionShow, options);
+  const constructionImg = document.querySelector('.approach__img-card');
+  
+  function approachContractionShow(entry) {
+    entry.forEach(img => {
+      if (img.isIntersecting) {
+        img.target.classList.add('hidden');
+      }
+    });
+  }
+  
+  constructObserver.observe(constructionImg);
+});
 
-function approachContractionShow(entry) {
-  entry.forEach(img => {
-    if (img.isIntersecting) {
-      img.target.classList.add('hidden');
-    }
+// Hide approach img and make before/after
+$(document).ready(function () {
+  $(".approach__twenty").twentytwenty({
+    default_offset_pct: 0,
+    move_with_handle_only: true,
+    no_overlay: true,
+    // move_slider_on_hover: true,
   });
-}
 
-constructObserver.observe(constructionImg);
+  const options = { threshold: [0.9] };
+  const constructObserver = new IntersectionObserver(approachContractionShow, options);
+  const constructionImg = document.querySelector('.approach__img-card_over');
+  
+  function approachContractionShow(entry) {
+    entry.forEach(img => {
+      if (img.isIntersecting) {
+        img.target.classList.add('hidden');
+      }
+    });
+  }
+  
+  constructObserver.observe(constructionImg);
+});
 
 // Swiper services
 
@@ -61,9 +88,8 @@ servicesSlides.forEach(slide => {
 });
 
 const servicesNextBtn = document.querySelector('.services__swiper-btn-next');
-const servicesPrevBtn = document.querySelector('.services__swiper-btn-prev');
 
-const servicesLastMove = (mutationsList, observer) => {
+const servicesLastMove = (mutationsList) => {
   for (let mutation of mutationsList) {
     if (mutation.type === 'attributes') {
       if (mutation.attributeName !== 'class') return;

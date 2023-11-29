@@ -6,6 +6,8 @@ import '@splidejs/splide/css';
 
 // UTILS
 import './js/utils/jquery.mask';
+import './js/utils/jquery.event.move';
+import './js/utils/jquery.twentytwenty';
 
 // PAGES
 import './js/pages/home-page';
