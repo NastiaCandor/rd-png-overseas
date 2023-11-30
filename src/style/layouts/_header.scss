@@ -2,7 +2,7 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
   }
   &__logo-text {
     font-family: "Euclid Circular A";
@@ -10,22 +10,28 @@
   }
   &__nav {
     position: relative;
-    padding: 0 9.9rem 0 9.1rem;
+    // padding: 0 9.9rem 0 9.1rem;
     display: flex;
     list-style: none;
     gap: 3.6rem;
-    margin-left: 10rem;
+    // margin-left: 10rem;
+
+    width: 94rem;
+    justify-content: center;
+
     &::before {
       content: '';
       display: block;
       position: absolute;
       z-index: -1;
-      width: 88rem;
-      height: 11.5rem;
-      top: -1.5rem;
-      left: 3rem;
+      width: 94rem;
+      height: 8rem;
+      top: 0rem;
+      // left: 1rem;
       background: $dark-bg-color;
-      transform: perspective(58rem) rotateX(-45deg);
+      // transform: perspective(58rem) rotateX(-45deg);
+
+      clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%);
     }
     &-item {
       padding: 3rem 0 2.5rem 0;
@@ -40,6 +46,66 @@
     }
     &-link {
       text-transform: uppercase;
+    }
+  }
+  &__logo {
+    width: 5.4rem;
+    height: 6.8rem;
+    display: block;
+  }
+}
+
+.header {
+  &__left-side {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31rem;
+    height: 8rem;
+    left: 3rem;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0rem;
+      display: block;
+      border: 0.2rem solid #BA77FD;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      -webkit-transform: skew(38deg);
+      -moz-transform: skew(38deg);
+      -o-transform: skew(38deg);
+      transform: skew(38deg);
+
+      // clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%);
+    }
+  }
+  &__right-side {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31rem;
+    height: 8rem;
+    left: -3rem;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0rem;
+      display: block;
+      border: 0.2rem solid #BA77FD;
+      width: 100%;
+      height: 100%;
+      -webkit-transform: skew(-38deg);
+      -moz-transform: skew(-38deg);
+      -o-transform: skew(-38deg);
+      transform: skew(-38deg);
+      z-index: -1;
+
+      // clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%);
     }
   }
 }

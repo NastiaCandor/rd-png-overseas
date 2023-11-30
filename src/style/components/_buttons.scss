@@ -38,4 +38,9 @@
       }
     }
   }
+  &_transp {
+    &:hover {
+      color: $contrast-color;
+    }
+  }
 }
