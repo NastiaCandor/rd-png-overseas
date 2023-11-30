@@ -13,7 +13,7 @@
     // padding: 0 9.9rem 0 9.1rem;
     display: flex;
     list-style: none;
-    gap: 3.6rem;
+    // gap: 3.6rem;
     // margin-left: 10rem;
 
     width: 94rem;
@@ -34,7 +34,8 @@
       clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%);
     }
     &-item {
-      padding: 3rem 0 2.5rem 0;
+      position: relative;
+      padding: 3rem 2rem 2.5rem 2rem;
       border-bottom: solid 0.1rem #00000000;
       transition-property: color, border-bottom;
       transition-duration: 0.4s;
@@ -108,4 +109,58 @@
       // clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%);
     }
   }
+}
+
+// DROP MENUS
+.header {
+  &__drop-wrapper {
+    display: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 8rem;
+    z-index: 10;
+    width: 100%;
+
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+  }
+  &__drop-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: $drop-menu-bg-color;
+    will-change: backdrop-filter;
+    backdrop-filter: blur(12.5px);
+
+    // backdrop-filter: blur(0rem);
+    // opacity: 0;
+    // transition-property: opacity;
+    // transition-duration: 0.4s;
+    // transition-timing-function: ease-in-out;
+
+    padding: 3rem;
+    gap: 2rem;
+  }
+  &__drop-item {
+    color: $text-color;
+    &:hover {
+      color: $contrast-color;
+    }
+  }
+}
+
+.header__nav-item:hover {
+  .header__drop-wrapper {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  // .header__drop-menu {
+  //   opacity: 1;
+  // }
 }

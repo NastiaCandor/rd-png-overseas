@@ -26,6 +26,7 @@ $(document).ready(function () {
 
 // Hide approach img and make before/after
 $(document).ready(function () {
+  if (!document.querySelector('.approach__twenty')) return;
   $(".approach__twenty").twentytwenty({
     default_offset_pct: 0.5,
     move_with_handle_only: true,
