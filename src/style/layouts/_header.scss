@@ -10,11 +10,8 @@
   }
   &__nav {
     position: relative;
-    // padding: 0 9.9rem 0 9.1rem;
     display: flex;
     list-style: none;
-    // gap: 3.6rem;
-    // margin-left: 10rem;
 
     width: 94rem;
     justify-content: center;
@@ -27,9 +24,7 @@
       width: 94rem;
       height: 8rem;
       top: 0rem;
-      // left: 1rem;
       background: $dark-bg-color;
-      // transform: perspective(58rem) rotateX(-45deg);
 
       clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%);
     }
@@ -79,8 +74,6 @@
       -moz-transform: skew(38deg);
       -o-transform: skew(38deg);
       transform: skew(38deg);
-
-      // clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%);
     }
   }
   &__right-side {
@@ -105,8 +98,6 @@
       -o-transform: skew(-38deg);
       transform: skew(-38deg);
       z-index: -1;
-
-      // clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%);
     }
   }
 }
@@ -114,37 +105,24 @@
 // DROP MENUS
 .header {
   &__drop-wrapper {
-    display: none;
-
     position: absolute;
-    top: 0;
+    top: 8rem;
     left: 0;
-    padding-top: 8rem;
     z-index: 10;
     width: 100%;
+    background-color: $drop-menu-bg-color;
+    will-change: backdrop-filter;
+    backdrop-filter: blur(12.5px);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2rem;
 
-    display: block;
     opacity: 0;
     visibility: hidden;
     transition-property: opacity, visibility;
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
-  }
-  &__drop-menu {
-    display: flex;
-    flex-direction: column;
-    background-color: $drop-menu-bg-color;
-    will-change: backdrop-filter;
-    backdrop-filter: blur(12.5px);
-
-    // backdrop-filter: blur(0rem);
-    // opacity: 0;
-    // transition-property: opacity;
-    // transition-duration: 0.4s;
-    // transition-timing-function: ease-in-out;
-
-    padding: 3rem;
-    gap: 2rem;
   }
   &__drop-item {
     color: $text-color;
@@ -154,13 +132,7 @@
   }
 }
 
-.header__nav-item:hover {
-  .header__drop-wrapper {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-  // .header__drop-menu {
-  //   opacity: 1;
-  // }
+.header__nav-item:hover .header__drop-wrapper {
+  opacity: 1;
+  visibility: visible;
 }
