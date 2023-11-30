@@ -116,12 +116,17 @@ global.jQuery = require('jquery');
       };
 
       var moveTarget = options.move_with_handle_only ? slider : container;
-      moveTarget.on("movestart",onMoveStart);
-      // moveTarget.on("move",onMove);
-      moveTarget.on("mousemove",onMove);
-      moveTarget.on("mouseup",onMoveEnd);
-      // added
-      // moveTarget.on("mouseleave",onMoveEnd);
+      if (options.move_with_handle_only) {
+        moveTarget.on("movestart",onMoveStart);
+        // moveTarget.on("move",onMove);
+        container.on("mousemove", onMove);
+        // moveTarget.on("mousemove",onMove);
+        $(document).on("mouseup",onMoveEnd);
+        moveTarget.on("mouseup",onMoveEnd);
+        // added
+        // moveTarget.on("mouseleave",onMoveEnd);
+      }
+
 
       if (options.move_slider_on_hover) {
         container.on("mouseenter", onMoveStart);
