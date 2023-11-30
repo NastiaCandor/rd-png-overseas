@@ -27,7 +27,7 @@ $(document).ready(function () {
 // Hide approach img and make before/after
 $(document).ready(function () {
   $(".approach__twenty").twentytwenty({
-    default_offset_pct: 0,
+    default_offset_pct: 0.5,
     move_with_handle_only: true,
     no_overlay: true,
     // move_slider_on_hover: true,
