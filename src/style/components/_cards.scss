@@ -9,6 +9,9 @@ $octagon-clip-width: 3rem;
   position: absolute;
   background: $dark-purple-bg-color;
   @include octagon-bg(1.5rem, 2rem);
+  @include media-screen {
+    @include octagon-bg(2.5rem, 2rem);
+  }
 }
 
 .octagon-card-border {
@@ -18,4 +21,7 @@ $octagon-clip-width: 3rem;
   background: rgb(199,255,81);
   background: $border-gradient;
   @include octagon-border(2rem);
+  @include media-screen {
+    @include octagon-border(2.5rem);
+  }
 }

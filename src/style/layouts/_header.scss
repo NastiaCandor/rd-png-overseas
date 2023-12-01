@@ -1,4 +1,8 @@
 .header {
+  @include media-screen {
+    background: $dark-bg-color;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -12,9 +16,12 @@
     position: relative;
     display: flex;
     list-style: none;
-
     width: 94rem;
     justify-content: center;
+
+    @include media-screen {
+      display: none;
+    }
 
     &::before {
       content: '';
@@ -48,6 +55,18 @@
     width: 5.4rem;
     height: 6.8rem;
     display: block;
+    @include media-screen {
+      width: 5.6rem;
+      height: 6.8rem;
+    }
+  }
+  &__tel-mobile {
+    display: none;
+    @include media-screen {
+      display: block;
+      width: 4.8rem;
+      height: 4.8rem;
+    }
   }
 }
 
@@ -75,6 +94,16 @@
       -o-transform: skew(38deg);
       transform: skew(38deg);
     }
+    @include media-screen {
+      width: 100%;
+      justify-content: space-between;
+      left: 0;
+      height: 100%;
+      padding: 3.2rem 0;
+      &::before {
+        display: none;
+      }
+    }
   }
   &__right-side {
     position: relative;
@@ -98,6 +127,9 @@
       -o-transform: skew(-38deg);
       transform: skew(-38deg);
       z-index: -1;
+    }
+    @include media-screen {
+      display: none;
     }
   }
 }

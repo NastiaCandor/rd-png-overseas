@@ -1,0 +1,37 @@
+%hamburger-line {
+  display: inline-block;
+  background: #FFF;
+  height: 0.6rem;
+  width: 100%;
+  position: absolute;
+  content: '';
+}
+
+.hamburger {
+  display: inline-block;
+  display: none;
+  position: relative;
+  margin: auto;
+  width: 5.4rem;
+  height: 3rem;
+  z-index: 20;
+  @include media-screen {
+    display: block;
+  }
+  &::before {
+    @extend %hamburger-line;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    @extend %hamburger-line;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.hamburger__line {
+  @extend %hamburger-line;
+  height: 0.6rem;
+  top: calc(50% - 0.3rem);
+}

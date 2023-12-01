@@ -1,38 +1,68 @@
 .genl-h1-title {
   font-family: "Julius Sans One";
   @include font(7.2rem, 140%);
+  @include media-screen {
+    font-size: 6.8rem;
+    line-height: 125%;
+  }
 }
 
 .genl-h2-title {
   font-family: "Julius Sans One";
   @include font(5.2rem, 123%);
+  @include media-screen {
+    font-size: 4.8rem;
+    line-height: 125%;
+  }
 }
 
 .genl-subtitle-1 {
   font-family: "Euclid Circular A";
   @include font(1.6rem, 150%);
   text-transform: uppercase;
+  @include media-screen {
+    font-size: 2.4rem;
+    letter-spacing: 0.12rem;
+  }
 }
 
 .genl-subtitle-2 {
   font-family: "Euclid Circular A";
   @include font(2.4rem, 140%, 500);
+  @include media-screen {
+    font-size: 3.6rem;
+    letter-spacing: 0.18rem;
+  }
 }
 
 .genl-text-reg {
   font-family: "Euclid Circular A";
   @include font(1.8rem, 135%);
   letter-spacing: 0.09rem;
+  @include media-screen {
+    font-size: 2.8rem;
+    line-height: 150%;
+    letter-spacing: 0.14rem;
+  }
 }
 
 .genl-description {
   font-family: "Euclid Circular A";
   @include font(2.4rem, 125%);
   text-transform: uppercase;
+  @include media-screen {
+    font-size: 3.6rem;
+    line-height: 140%;
+    letter-spacing: 0.18rem;
+  }
 }
 
 .genl-numeric {
   font-family: "Euclid Circular A";
   color: $contrast-color;
   @include font(5.5rem, 125%, 700);
+  @include media-screen {
+    font-size: 6.4rem;
+    line-height: 105%;
+  }
 }

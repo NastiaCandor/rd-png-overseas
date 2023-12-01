@@ -9,6 +9,10 @@
   @media (max-width: 48em) { @content; }
 }
 
+@mixin media-screen-max {
+  @media (min-width: 48em) { @content; }
+}
+
 @mixin octagon-bg ($size, $padding) {
   $octagon-clip-width: calc($size * 2);
   width: calc(100% - $padding * 2);
