@@ -605,7 +605,8 @@
       }
     }
     &-info {
-      max-height: 0;
+      margin-top: 5rem;
+      display: none;
       overflow: hidden;
       transition: max-height 0.3s ease;
     }
@@ -615,7 +616,9 @@
     }
   }
   &__info-title {
-    border-top: solid 0.2rem #C7FF51;
+    border-top: solid 0.2rem transparent;
+    border-image: linear-gradient(145deg, rgb(199, 255, 81) 0%, rgb(186, 119, 253) 100%);
+    border-image-slice: 1;
     padding: 4.5rem 0 3rem;
     text-transform: none;
   }
@@ -672,6 +675,9 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       display: -webkit-box;
+      &.display {
+        -webkit-line-clamp: inherit;
+      }
     }
   }
   &__graph-wrapper {
@@ -871,6 +877,7 @@
     @include media-screen {
       width: 63rem;
       height: 66rem;
+      display: block;
     }
     &-top-box {
       display: flex;

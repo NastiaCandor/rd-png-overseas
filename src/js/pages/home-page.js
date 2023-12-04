@@ -169,32 +169,19 @@ $(document).ready(function () {
 // mobile accordion
 $(document).ready(function () {
   if (!document.querySelector('.advantages')) return;
-  const accordItems = document.querySelectorAll('[ data-accord]');
-  if (accordItems.length === 0) return;
-  accordItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      const info = item.nextElementSibling;
-      if (item.classList.contains('_active')) {
-        removeActiveAccord();
-      } else {
-        removeActiveAccord();
-        item.classList.add('_active');
-        if (info.style.maxHeight) {
-          info.style.maxHeight = null;
-        } else {
-          info.style.maxHeight = info.scrollHeight + 'px';
-        }
-      }
 
-    });
-  });
-
-  function removeActiveAccord() {
-    accordItems.forEach((item) => {
-      item.classList.remove('_active');
-      item.nextElementSibling.style.maxHeight = null;
-    });
-  }
+  $('.advantages__item-title').click(function(e) {
+    e.preventDefault();
+    if($(this).hasClass('active')){
+      $(this).removeClass("active");
+      $(this).siblings('.advantages__item-info').slideUp(400);
+    } else {
+      $(".advantages__item-title").removeClass("active");
+      $(this).addClass("active");
+      $('.advantages__item-info').slideUp(400);
+      $(this).siblings('.advantages__item-info').slideDown(400);
+    }
+  })
 });
 
 // PLAN section animation
@@ -281,6 +268,15 @@ $(document).ready(function () {
   if (!document.querySelector('.approach__view-all')) return;
   $('.approach__view-all').on('click', () => {
     $('.approach__text').addClass('display');
-    $('.approach__view-all').addClass('hidden');
+    $('.approach__view-all').hide();
+  });
+});
+
+// PLAN mobile text display
+$(document).ready(function () {
+  if (!document.querySelector('.plan__view-all')) return;
+  $('.plan__view-all').on('click', () => {
+    $('.plan__text').addClass('display');
+    $('.plan__view-all').hide();
   });
 });

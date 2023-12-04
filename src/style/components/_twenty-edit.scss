@@ -1,5 +1,8 @@
 .twentytwenty-horizontal .twentytwenty-handle:before, .twentytwenty-horizontal .twentytwenty-handle:after {
-  display: none;
+  display: block;
+  background: $contrast-color;
+  margin: 0;
+  width: 0.1rem;
   @include media-screen {
     display: block;
     background: $contrast-color;
