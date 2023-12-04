@@ -6,6 +6,18 @@ import { Navigation, EffectCoverflow} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+// Functions
+var rem = function rem() {
+  var html = document.getElementsByTagName('html')[0];
+
+  return function () {
+      return parseInt(window.getComputedStyle(html)['fontSize']);
+  }
+}();
+function toRem(length) {
+  return (parseInt(length) / rem());
+}
+
 // APPROACH
 // Hide construction img (prev version)
 // $(document).ready(function () {
@@ -44,6 +56,7 @@ $(document).ready(function () {
       if (img.isIntersecting) {
         img.target.classList.add('hidden');
         $('.approach__preview-box').addClass('hidden');
+        constructObserver.unobserve(img.target);
       }
     });
   }
@@ -150,9 +163,9 @@ $(document).ready(function () {
     text[0].classList.add('active');
   
     const titleHeight = title.css('height');
-    $('.advantages__display-title-list').css('height', titleHeight);
+    $('.advantages__display-title-list').css('height', `${toRem(titleHeight)}rem`);
     const textHeight = text.css('height');
-    $('.advantages__display-text-list').css('height', textHeight);
+    $('.advantages__display-text-list').css('height', `${toRem(textHeight)}rem`);
   
     advanCurrId = id;
   };
@@ -210,6 +223,7 @@ $(document).ready(function () {
         pieDiagramList.forEach((el) => {
           animatePieDiagram(el);
         })
+        graphObserver.unobserve(item.target);
       }
     });
   }
