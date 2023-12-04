@@ -60,11 +60,14 @@
 }
 
 .btn-lined {
+  font-family: "Euclid Circular A";
+  @include font(1.8rem, normal, 600);
+  letter-spacing: normal;
+  border-bottom: solid #FFF 0.4rem;
+  color: #FFF;
   @include media-screen {
-    font-family: "Euclid Circular A";
-    @include font(2.8rem, 150%, 600);
+    font-size: 2.8rem;
+    line-height: 150%;
     letter-spacing: 0.7px;
-    border-bottom: solid #FFF 0.4rem;
-    color: #FFF;
   }
 }

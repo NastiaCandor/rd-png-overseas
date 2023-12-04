@@ -1,0 +1,34 @@
+.news-list {
+  padding: 10rem 0 22rem;
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    width: 73rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 0.1rem transparent;
+    border-image: linear-gradient(90deg, #C7FF51 50%, #BA77FD 100%);
+    border-image-slice: 1;
+  }
+  &__wrapper {
+    padding: 10rem 0 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+  .news__slide {
+    .octagon-card {
+      transition: background 0.4s ease;
+    }
+  }
+  .news__slide:hover {
+    .octagon-card {
+      background: $news-slide-hover-bg-color;
+    }
+  }
+  .news-list__view-all {
+    align-self: center;
+  }
+}

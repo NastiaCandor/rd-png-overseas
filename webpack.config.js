@@ -14,6 +14,7 @@ const devtool = devMode ? "source-map" : undefined;
 const entryPoints = {
   index: path.resolve(__dirname, "src", "index.js"),
   home_page: path.resolve(__dirname, "src", "index.js"),
+  news: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
