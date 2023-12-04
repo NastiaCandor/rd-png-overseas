@@ -259,6 +259,7 @@
     bottom: 1rem;
     right: 0;
     width: 53rem;
+    color: $text-color;
     @include media-screen {
       position: relative;
       bottom: 0;
@@ -665,6 +666,7 @@
   }
   &__text {
     margin-top: auto;
+    color: $text-color;
     br {
       content: '';
       display: block;
@@ -747,6 +749,9 @@
   }
   &__graph-percent {
     line-height: 80%;
+  }
+  &__graph-subtitle {
+    color: $text-color;
   }
   &__view-all {
     display: none;
@@ -887,6 +892,9 @@
         align-items: flex-end;
       }
     }
+    &-date {
+      color: $text-color;
+    }
     &-text {
       margin-top: 0.5rem;
       overflow: hidden;
@@ -938,6 +946,9 @@
     @include media-screen-max {
       &-top-box {
         margin-bottom: 3rem;
+      }
+      &-date {
+        color: $text-color;
       }
       &-text {
         margin-top: 0.5rem;

@@ -49,6 +49,7 @@
     }
     &-link {
       text-transform: uppercase;
+      color: $text-color;
     }
   }
   &__logo {
@@ -266,6 +267,7 @@
       &-link {
         display: flex;
         gap: 1.6rem;
+        color: $text-color;
         &::before {
           content: '';
           display: block;
