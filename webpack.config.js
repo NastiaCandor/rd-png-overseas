@@ -16,6 +16,7 @@ const entryPoints = {
   home_page: path.resolve(__dirname, "src", "index.js"),
   news: path.resolve(__dirname, "src", "index.js"),
   news_detail: path.resolve(__dirname, "src", "index.js"),
+  news_detail_photo: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
