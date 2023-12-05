@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>Contact us</title>
+</head>
+<body>
+  <include src="./components/header.html"></include>
+  <main>
+    <section class="contact">
+      <div class="container">
+        <p class="contact__title genl-h2-title">contact us</p>
+        <div class="contact__wrapper">
+          <div class="contact__map-box">
+            <div class="contact__map" id="contact-map"></div>
+          </div>
+          <div class="contact__info">
+            <p class="contact__subtitle genl-text-reg">You can call us by phone, email us or write a letter by filling out the form below.</p>
+            <div class="contact__contacts">
+              <div class="contact__item">
+                <p class="contact__type genl-subtitle-2">Address</p>
+                <p class="contact__detail genl-text-reg">Russian Federation, 127015, Moscow, st. Butyrskaya, 77, Business center “DIAGONAL HOUSE”</p>
+              </div>
+              <div class="contact__item">
+                <p class="contact__type genl-subtitle-2">Phone</p>
+                <p class="contact__detail genl-text-reg">+7 (495) 787-37-27</p>
+              </div>
+              <div class="contact__item">
+                <p class="contact__type genl-subtitle-2">E-mail</p>
+                <p class="contact__detail genl-text-reg">info@png-drilling.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact__border"></div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback">
+      <div class="container">
+        <form method="post" action="" class="feedback__form form" id="feedback">
+          <div class="form__block feedback__name-block">
+            <label for="name" class="form__label">Your name<span>*</span></label>
+            <input name="name" type="text" class="form__input">
+            <div class="form__error-msg">Field must be filled in</div>
+          </div>
+          <div class="form__block feedback__org-block">
+            <label for="organization" class="form__label">Organization / Individual</label>
+            <input name="organization" type="text" class="form__input">
+          </div>
+          <div class="form__block feedback__tel-block">
+            <label for="tel" class="form__label">Phone</label>
+            <input name="tel" type="tel" class="form__input">
+          </div>
+          <div class="form__block feedback__email-block">
+            <label for="email" class="form__label">E-mail<span>*</span></label>
+            <input name="email" type="email" class="form__input">
+            <div class="form__error-msg">Field must be filled in</div>
+          </div>
+          <div class="form__block feedback__comment-block">
+            <label for="comment" class="form__label">Your message<span>*</span></label>
+            <textarea name="comment" type="text" class="form__input"></textarea>
+            <div class="form__error-msg">Field must be filled in</div>
+          </div>
+          <p class="form__subtitle feedback__subtitle genl-text-reg">By clicking the button, you <span>consent to the processing of personal data.</span></p>
+          <button class="form__send-btn feedback__btn btn-rect btn-rect_purple" id="feedback-btn">Send message
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 5.01509L14.9822 1" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19 4.99513L14.9924 9.00002" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0.999993 4.99512L18.9902 4.99512" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <include src="./components/footer.html"></include>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVzWclwddGOJh2PAH6L9EbMBVLiVtRCRg&language=EN&region=en&callback=initMap"></script>
+  <script>
+    function initMap() {
+      const position = { lat: 55.803929, lng: 37.582251 };
+      const map = new google.maps.Map(document.getElementById("contact-map"), {
+        center: position,
+        zoom: 10,
+        mapTypeControl: false,
+        zoomControl: true,
+        zoomControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_CENTER,
+        },
+        scaleControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
+      });
+      // const infowindow = new google.maps.InfoWindow();
+
+      // infowindow.setContent("<b>Business center “DIAGONAL HOUSE”</b>");
+
+      const marker = new google.maps.Marker({ map, position: position });
+
+      // marker.addListener("click", () => {
+      //   infowindow.open(map, marker);
+      // });
+    }
+
+    window.initMap = initMap;
+  </script>
+</body>
+</html>

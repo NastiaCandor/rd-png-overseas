@@ -7,6 +7,7 @@ import '@splidejs/splide/css';
 // COMPONENTS
 import './js/components/burger';
 import './js/components/header';
+import './js/components/form';
 
 // UTILS
 import './js/utils/jquery.mask';
