@@ -71,3 +71,32 @@
     letter-spacing: 0.7px;
   }
 }
+
+.btn-arrow {
+  font-family: "Euclid Circular A";
+  @include font(1.8rem, 125%, 600);
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.8rem 0;
+  &::after {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1rem;
+    background-image: url(./assets/images/btn-arrow.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  @include media-screen {
+    font-size: 2.8rem;
+    line-height: 143%;
+    letter-spacing: 0.07rem;
+    gap: 3rem;
+    &::after {
+      width: 3rem;
+      height: 1.5rem;
+    }
+  }
+}
