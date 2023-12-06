@@ -7,11 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   $('#feedback').submit(function(e) {
     e.preventDefault();
     if (!validateFeedbackForm()) {
-
       return false;
     }
-
-    return false;
   })
 
   if (document.querySelector('#feedback')) validateFeedbackRealtimeForm();
@@ -21,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Feedback form validation
 function validateFeedbackRealtimeForm() {
-
   const name = $('.feedback__name-block').children('.form__input');
   const nameMsg = $('.feedback__name-block').children('.form__error-msg');
   validationInputRealtimeQuestion(name, nameMsg, validateName);
@@ -34,7 +30,22 @@ function validateFeedbackRealtimeForm() {
   const commentMsg = $('.feedback__comment-block').children('.form__error-msg');
   validationInputRealtimeQuestion(comment, commentMsg, validateComment);
 
+}
 
+function validateFeedbackForm() {
+  const name = $('.feedback__name-block').children('.form__input');
+  const nameMsg = $('.feedback__name-block').children('.form__error-msg');
+  const nameVal = validationInputQuestion(name, nameMsg, validateName);
+
+  const email = $('.feedback__email-block').children('.form__input');
+  const emailMsg = $('.feedback__email-block').children('.form__error-msg');
+  const emailVal = validationInputQuestion(email, emailMsg, validateEmail);
+
+  const comment = $('.feedback__comment-block').children('.form__input');
+  const commentMsg = $('.feedback__comment-block').children('.form__error-msg');
+  const commentVal = validationInputQuestion(comment, commentMsg, validateComment);
+
+  return (nameVal && emailVal && commentVal);
 }
 
 // Vacancy form validation
