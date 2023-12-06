@@ -1,13 +1,24 @@
 .contact {
   padding: 10rem 0 8rem;
+  @include media-screen {
+    padding: 10rem 0 4rem;
+  }
   &__title {
     margin-bottom: 6rem;
+    @include media-screen {
+      font-size: 6.8rem;
+      margin-bottom: 4rem;
+    }
   }
   &__wrapper {
     display: flex;
     gap: 9.3rem;
     position: relative;
     align-items: center;
+    @include media-screen {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
   }
   &__map-box {
     background: $dark-purple-bg-color;
@@ -15,6 +26,12 @@
     width: 80rem;
     height: 55.4rem;
     margin: 3rem 0;
+    @include media-screen {
+      margin: 1rem 0 0 0;
+      @include octagon-bg(2rem, 0rem);
+      width: 100%;
+      height: 45.4rem;
+    }
   }
   &__map {
     width: 100%;
@@ -22,6 +39,13 @@
   }
   &__info {
     width: 51.5rem;
+    padding: 6rem 0;
+    @include media-screen {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 7rem 5rem 5rem 3rem;
+    }
   }
   &__border {
     position: absolute;
@@ -33,26 +57,55 @@
     background: rgb(199,255,81);
     background: $border-gradient;
     @include octagon-border(3rem);
+    @include media-screen {
+      width: 100%;
+      @include octagon-border(2rem);
+    }
   }
   &__subtitle {
     color: $text-color;
-    margin-bottom: 6rem;
+    padding-bottom: 1rem;
     width: 45rem;
-  }
-  &__contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 4.8rem;
+    @include media-screen {
+      order: 2;
+      width: 100%;
+      padding-bottom: 10rem;
+    }
   }
   &__item {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+    margin: 4.8rem 0 0;
+    @include media-screen {
+      order: 3;
+      margin: 0 0 8rem;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    &_address {
+      @include media-screen {
+        order: 1;
+      }
+    }
   }
   &__type {
     line-height: 125%;
+    @include media-screen {
+      margin-bottom: 1rem;
+    }
   }
   &__detail {
     color: $text-color;
+  }
+}
+
+.feedback_contact-us {
+  .feedback__border {
+    display: none;
+    @include media-screen {
+      display: block;
+    }
   }
 }
