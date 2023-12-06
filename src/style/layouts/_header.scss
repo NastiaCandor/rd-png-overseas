@@ -42,6 +42,7 @@
       transition-property: color, border-bottom;
       transition-duration: 0.4s;
       transition-timing-function: ease-in-out;
+      color: $text-color;
       &:hover {
         color: $contrast-color;
         border-bottom: solid 0.1rem $contrast-color;
@@ -49,7 +50,6 @@
     }
     &-link {
       text-transform: uppercase;
-      color: $text-color;
     }
   }
   &__logo {
@@ -159,10 +159,18 @@
   }
   &__drop-item {
     color: $text-color;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
     &:hover {
       color: $contrast-color;
     }
   }
+}
+
+.operators__drop-link, .explore__drop-link {
+  width: 100%;
+  display: block;
 }
 
 .header__nav-item:hover .header__drop-wrapper {
