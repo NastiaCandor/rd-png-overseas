@@ -16,3 +16,4 @@ import './js/utils/jquery.twentytwenty';
 // PAGES
 import './js/pages/home-page';
 import './js/pages/news';
+import './js/pages/drilling-page';

@@ -284,6 +284,7 @@
   &__slide {
     width: 50rem;
     height: 53rem;
+    display: block;
     .octagon-card {
       @include octagon-bg(1.9rem, 2.5rem);
     }
@@ -335,7 +336,7 @@
         background-repeat: no-repeat;
         background-size: 100%;
         width: 2rem;
-        height: 0.8rem;
+        height: 0.9rem;
         @include media-screen {
           width: 2.6rem;
           height: 1.2rem;

@@ -165,4 +165,15 @@
       }
     }
   }
+  &_questions {
+    .form {
+      margin: 0;
+      padding: 6rem 5rem;
+      width: 76.1rem;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
