@@ -1,6 +1,6 @@
 import $ from "jquery";
 import Swiper from 'swiper';
-import { Mousewheel } from 'swiper/modules';
+import { Mousewheel, Navigation } from 'swiper/modules';
 
 // Functions
 var rem = function rem() {
@@ -49,50 +49,120 @@ $(document).ready(function () {
     });
   });
 });
-
+// slider
 $(document).ready(function () {
   if (!document.querySelector('.land-rigs')) return;
   const landRigs = document.querySelector('.land-rigs');
-  const landRigsSwiper = new Swiper('.land-rigs__info-slider', {
-    modules: [Mousewheel],
-    slidesPerView: 1,
-    speed: 1000,
-    direction: "vertical",
-    mousewheel: {
-      // releaseOnEdges: true,
-      eventsTarget: '.land-rigs',
-      // thresholdDelta: 1,
-    },
-    // releaseOnEdges: true,
-    spaceBetween: 30,
-    // on: {
-    //   slideChange: function(e) {
-    //     console.log(e)
-    //   },
-    //   // reachEnd: function () {
-    //   //   this.mousewheel.disable();
-    //   // }
-    // }
+  let landRigsSwiper;
+
+  if (!$(".land-rigs__info-slider").data("platform")) {
+		screen.width < 769
+			? $(".land-rigs__info-slider").data("platform", "mobile")
+			: $(".land-rigs__info-slider").data("platform", "desktop");
+	}
+  if (screen.width > 769) {
+    console.log('first desc');
+    landRigsSwiper = new Swiper('.land-rigs__info-slider', {
+      modules: [Mousewheel],
+      slidesPerView: 1,
+      speed: 1000,
+      direction: "vertical",
+      mousewheel: {
+        releaseOnEdges: true,
+        // eventsTarget: '.land-rigs',
+        // thresholdDelta: 1,
+      },
+      spaceBetween: 30,
+    });
+  } else {
+    console.log('first mob');
+    landRigsSwiper = new Swiper('.land-rigs__info-slider', {
+      modules: [Navigation],
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.land-rigs__swiper-btn-next',
+        prevEl: '.land-rigs__swiper-btn-prev',
+      },
+      spaceBetween: 30,
+    });
+  }
+
+  $(window).resize(function () {
+		changeLandRigsSlider();
+	});
+
+  function changeLandRigsSlider() {
+    if (screen.width < 769) {
+      if ($('.land-rigs__info-slider').data('platform') != 'desktop') return;
+      $(".land-rigs__info-slider").data("platform", "mobile");
+      landRigsSwiper.destroy();
+      landRigsSwiper = new Swiper('.land-rigs__info-slider', {
+        modules: [Mousewheel, Navigation],
+        slidesPerView: 2,
+        // mousewheel: {
+        //   releaseOnEdges: true,
+        //   // eventsTarget: '.land-rigs',
+        //   // thresholdDelta: 1,
+        // },
+        navigation: {
+          nextEl: '.land-rigs__swiper-btn-next',
+          prevEl: '.land-rigs__swiper-btn-prev',
+        },
+        spaceBetween: 30,
+      });
+    } else {
+      if ($('.land-rigs__info-slider').data('platform') != 'mobile') return;
+      $(".land-rigs__info-slider").data("platform", "desktop");
+      landRigsSwiper.destroy();
+      landRigsSwiper = new Swiper('.land-rigs__info-slider', {
+        modules: [Mousewheel],
+        slidesPerView: 1,
+        speed: 1000,
+        direction: "vertical",
+        mousewheel: {
+          releaseOnEdges: true,
+          // eventsTarget: '.land-rigs',
+          // thresholdDelta: 1,
+        },
+        spaceBetween: 30,
+      });
+    }
+  }
+
+  // Show more btn
+  $('.land-rigs__slide-more-btn').click(function(e) {
+    console.log($(this).closest('.land-rigs__slide-text').children('.land-rigs__info-list'));
+    const list = $(this).closest('.land-rigs__slide-text').children('.land-rigs__info-list');
+    if (list.css('display') === 'none') {
+      list.slideDown(400);
+    } else {
+      list.slideUp(400);
+    }
   });
 
-  document.addEventListener("wheel", 
-    function(e) { 
-      if (e.wheelDeltaY > 0) {
-        if (landRigsSwiper.isBeginning) {
-          landRigsSwiper.mousewheel.disable();
-        } else {
-          landRigsSwiper.mousewheel.enable();
-        }
-      } else {
-        if (landRigsSwiper.isEnd) {
-          landRigsSwiper.mousewheel.disable();
-        } else {
-          landRigsSwiper.mousewheel.enable();
-        }
-      }
-    },{ passive: false });
+  // document.addEventListener("wheel", 
+  //   function(e) { 
+  //     if (e.wheelDeltaY > 0) {
+  //       if (landRigsSwiper.isBeginning) {
+  //         landRigsSwiper.mousewheel.disable();
+  //         var delta = e.deltaY || e.detail || e.wheelDelta;
+  //         // console.log(delta);
+  //         // $('html, body').css('transform', `translateY(${Math.abs(delta)}px)`);
+
+  //       } else {
+  //         landRigsSwiper.mousewheel.enable();
+  //       }
+  //     } else {
+  //       if (landRigsSwiper.isEnd) {
+  //         landRigsSwiper.mousewheel.disable();
+  //       } else {
+  //         landRigsSwiper.mousewheel.enable();
+  //       }
+  //     }
+  //   },{ passive: false });
 
 });
+
 
 // TRYING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 // $(document).ready(function () {

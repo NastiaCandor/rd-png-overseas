@@ -1,0 +1,26 @@
+.list {
+  li {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    color: $text-color;
+    @include media-screen {
+      align-items: flex-start;
+    }
+  }
+  li::before {
+    content: '';
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    background-image: url(./assets/images/list-li-icon-rect.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    @include media-screen {
+      width: 2rem;
+      height: 2rem;
+      min-width: 2rem;
+      margin-top: 1rem;
+    }
+  }
+}

@@ -12,6 +12,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  @include media-screen {
+    width: 7.2rem;
+    height: 7.2rem;
+  }
   &:after {
     content: '';
     display: block;
@@ -23,6 +27,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    @include media-screen {
+      width: 7.2rem;
+      height: 7.2rem;
+    }
   }
 }
 .slider-btn-prev {
@@ -34,6 +42,10 @@
     background-size: 100%;
     width: 1.2rem;
     height: 2.2rem;
+    @include media-screen {
+      width: 1.4rem;
+      height: 2.5rem;
+    }
   }
 }
 .slider-btn-next {
@@ -45,6 +57,10 @@
     background-size: 100%;
     width: 1.2rem;
     height: 2.2rem;
+    @include media-screen {
+      width: 1.4rem;
+      height: 2.5rem;
+    }
   }
   &:after {
     background: $border-gradient;

@@ -170,10 +170,17 @@
       margin: 0;
       padding: 6rem 5rem;
       width: 76.1rem;
+      @include media-screen {
+        width: 100%;
+        padding: 7rem 3rem;
+      }
     }
     .container {
       display: flex;
       justify-content: space-between;
+      @include media-screen {
+        flex-direction: column;
+      }
     }
   }
 }
