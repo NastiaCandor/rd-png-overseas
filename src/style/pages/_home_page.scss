@@ -588,6 +588,7 @@
       padding: 0;
       border-bottom: solid 0.2rem #c8ff5100;
       transition-property: padding;
+      color: #FFF;
       @include advantages-transition;
       &::after {
         content: '';
