@@ -17,3 +17,4 @@ import './js/utils/jquery.twentytwenty';
 import './js/pages/home-page';
 import './js/pages/news';
 import './js/pages/drilling-page';
+import './js/pages/mpd';

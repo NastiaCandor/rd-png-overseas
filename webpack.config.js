@@ -19,6 +19,7 @@ const entryPoints = {
   news_detail_photo: path.resolve(__dirname, "src", "index.js"),
   contact_us: path.resolve(__dirname, "src", "index.js"),
   drilling_and_workover: path.resolve(__dirname, "src", "index.js"),
+  mpd: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 

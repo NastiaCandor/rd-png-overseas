@@ -1,21 +1,26 @@
 .list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  @include media-screen {
+    gap: 2.6rem;
+  }
   li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.2rem;
     color: $text-color;
-    @include media-screen {
-      align-items: flex-start;
-    }
   }
   li::before {
     content: '';
     display: block;
     width: 1.1rem;
+    min-width: 1.1rem;
     height: 1.1rem;
     background-image: url(./assets/images/list-li-icon-rect.svg);
     background-repeat: no-repeat;
     background-size: 100%;
+    margin-top: 1rem;
     @include media-screen {
       width: 2rem;
       height: 2rem;

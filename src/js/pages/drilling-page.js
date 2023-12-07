@@ -48,6 +48,30 @@ $(document).ready(function () {
       changeTabInfo(item, id);
     });
   });
+
+  $(window).resize(function () {
+		resizeTabDisplay();
+	});
+
+  if (!$(".rigs-design__tabs-display").data("platform")) {
+		screen.width < 769
+			? $(".rigs-design__tabs-display").data("platform", "mobile")
+			: $(".rigs-design__tabs-display").data("platform", "desktop");
+	}
+
+  function resizeTabDisplay() {
+    if (screen.width < 769) {
+      if ($('.rigs-design__tabs-display').data('platform') != 'desktop') return;
+      $(".rigs-design__tabs-display").data("platform", "mobile");
+      const infoHeight = $(`.rigs-design__tab-info[data-rig-design="${tabId}"]`).css('height');
+      $('.rigs-design__tabs-display').css('height', `${toRem(infoHeight)}rem`);
+    } else {
+      if ($('.rigs-design__tabs-display').data('platform') != 'mobile') return;
+      $(".rigs-design__tabs-display").data("platform", "desktop");
+      const infoHeight = $(`.rigs-design__tab-info[data-rig-design="${tabId}"]`).css('height');
+      $('.rigs-design__tabs-display').css('height', `${toRem(infoHeight)}rem`);
+    }
+  }
 });
 // slider
 $(document).ready(function () {
@@ -61,7 +85,6 @@ $(document).ready(function () {
 			: $(".land-rigs__info-slider").data("platform", "desktop");
 	}
   if (screen.width > 769) {
-    console.log('first desc');
     landRigsSwiper = new Swiper('.land-rigs__info-slider', {
       modules: [Mousewheel],
       slidesPerView: 1,
