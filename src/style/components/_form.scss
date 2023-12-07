@@ -186,4 +186,10 @@
       }
     }
   }
+  &._lg {
+    margin-bottom: 31rem;
+    @include media-screen {
+      margin-bottom: 19rem;
+    }
+  }
 }

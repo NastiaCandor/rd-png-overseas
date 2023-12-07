@@ -1,0 +1,81 @@
+.cwd-banner {
+  padding: 10rem 0 22rem;
+  @include media-screen {
+    padding: 10rem 0 20rem;
+  }
+  .container {
+    display: grid;
+    justify-content: space-between;
+    @include media-screen {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__subtitle {
+    color: $contrast-color;
+  }
+  &__title {
+    width: 76rem;
+    margin: 1rem 0 8rem;
+    padding-bottom: 8rem;
+    border-bottom: solid 0.2rem transparent;
+    border-image: linear-gradient(145deg, rgb(199, 255, 81) 0%, rgb(186, 119, 253) 100%);
+    border-image-slice: 1;
+    @include media-screen {
+      width: 68.5rem;
+      padding-bottom: 3.5rem;
+    }
+  }
+  &__text {
+    width: 74rem;
+    @include media-screen {
+      width: 100%;
+    }
+  }
+  &__list-subtitle {
+    margin-top: 10rem;
+    width: 74rem;
+    @include media-screen {
+      width: 100%;
+      margin-top: 6rem;
+    }
+  }
+  &__list {
+    margin-top: 3.5rem;
+    width: 77rem;
+    @include media-screen {
+      width: 100%;
+      margin-top: 4.5rem;
+      gap: 5rem;
+    }
+  }
+  &__photo {
+    margin-top: 5rem;
+    position: relative;
+    width: 62.6rem;
+    height: 77.7rem;
+    grid-row: 1 / 12;
+    grid-column: 2;
+    @include media-screen {
+      width: 100%;
+      margin-top: 6.5rem;
+      height: 41.7rem;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+    .octagon-card {
+      @include octagon-bg(2.5rem, 2.5rem);
+      @include media-screen {
+        @include octagon-bg(2rem, 2.5rem);
+      }
+    }
+    .octagon-card-border {
+      @include octagon-border(2.5rem);
+      @include media-screen {
+        @include octagon-border(2.5rem);
+      }
+    }
+  }
+}
