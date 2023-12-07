@@ -1,5 +1,8 @@
 .mpd-banner {
   padding: 10rem 0 11rem;
+  @include media-screen {
+    padding-bottom: 10rem;
+  }
   .container {
     display: grid;
   }
@@ -13,6 +16,10 @@
     grid-column: 1;
     width: 51rem;
     margin-top: 1rem;
+    @include media-screen {
+      font-size: 6.8rem;
+      width: 100%;
+    }
   }
   &__text {
     color: #FFF;
@@ -21,6 +28,12 @@
     width: 63rem;
     justify-self: end;
     margin-top: 3rem;
+    @include media-screen {
+      grid-row: 4;
+      grid-column: 1;
+      width: 100%;
+      margin-top: 2rem;
+    }
   }
   &__photo {
     position: relative;
@@ -29,6 +42,11 @@
     grid-row: 3;
     grid-column: 1 / 3;
     margin-top: 8rem;
+    @include media-screen {
+      width: 100%;
+      grid-row: 3;
+      grid-column: 1;
+    }
     img {
       height: 100%;
       object-fit: cover;
@@ -38,16 +56,40 @@
 
 .mpd-advan {
   padding-bottom: 22rem;
+  @include media-screen {
+    padding-bottom: 17rem;
+  }
+  &__wrapper {
+    &_desc {
+      @include media-screen {
+        display: none;
+      }
+    }
+    &_mob {
+      display: none;
+      @include media-screen {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+      }
+    }
+  } 
   &__tab-info {
     display: flex;
     justify-content: space-between;
     &-text {
       width: 74rem;
+      @include media-screen {
+        width: 100%;
+      }
     }
     &-photo {
       @include octagon-bg(1.5rem, 0rem);
       width: 62.6rem;
       height: 43.2rem;
+      @include media-screen {
+        width: 100%;
+      }
       img {
         height: 100%;
         object-fit: cover;
@@ -56,5 +98,67 @@
   }
   &__tab-title {
     margin-bottom: 3rem;
+  }
+  &__item {
+    padding: 3rem 3rem;
+    position: relative;
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      padding: 0;
+      border-bottom: solid 0.2rem rgba(200, 255, 81, 0);
+      transition-property: padding;
+      color: #FFF;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+      &::after {
+        content: "";
+        display: block;
+        background-image: url(./assets/images/accord-arrow.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 3.2rem;
+        height: 3.2rem;
+        min-width: 3.2rem;
+        transform: rotate(-180deg);
+        transition: transform 0.3s ease;
+      }
+      &.active {
+        padding: 2rem 0 0;
+        &::after {
+          transform: rotate(0deg);
+        }
+      }
+    }
+    &-info {
+      display: none;
+      margin-top: 4.8rem;
+      border-top: solid 0.2rem transparent;
+      border-image: linear-gradient(145deg, rgb(199, 255, 81) 0%, rgb(186, 119, 253) 100%);
+      border-image-slice: 1;
+      padding-top: 4.8rem;
+      padding-bottom: 2rem;
+    }
+    &-list {
+      font-family: "Euclid Circular A";
+      @include font(3.6rem, 135%);
+      letter-spacing: 0.18rem;
+      li {
+        gap: 2.2rem;
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $border-gradient;
+      @include octagon-border(1.5rem);
+    }
   }
 }

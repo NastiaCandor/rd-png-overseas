@@ -61,6 +61,9 @@
     &.active {
       opacity: 1;
       transform: translateY(2.5rem);
+      @include media-screen {
+        transform: translateY(4.5rem);
+      }
     }
   }
 }
