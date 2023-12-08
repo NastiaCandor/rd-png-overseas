@@ -18,3 +18,4 @@ import './js/pages/home-page';
 import './js/pages/news';
 import './js/pages/drilling-page';
 import './js/pages/mpd';
+import './js/pages/about_us';

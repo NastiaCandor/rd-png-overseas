@@ -25,3 +25,33 @@ $octagon-clip-width: 3rem;
     @include octagon-border(2.5rem);
   }
 }
+
+.ad-card {
+  position: relative;
+  width: 36rem;
+  padding: 5rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background: $border-gradient;
+    @include octagon-border(2.5rem);
+    width: 100%;
+    height: 100%;
+  }
+  &__title {
+    height: 9rem;
+    overflow: hidden;
+  }
+  &__img-box {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  &__text {
+    margin-top: 2.4rem;
+  }
+}

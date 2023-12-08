@@ -893,6 +893,11 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 5rem;
+      transition-property: margin;
+      transition-duration: 0.4s;
+      transition-timing-function: ease;
+
+      margin: 0;
       @include media-screen {
         align-items: flex-end;
       }
@@ -908,12 +913,20 @@
       color: $text-color;
       -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
-      transition-property: color, -webkit-line-clamp;
+      transition-property: color, height;
       transition-duration: 0.3s;
       transition-timing-function: ease;
+
+      height: 12rem;
       @include media-screen {
         -webkit-line-clamp: 9;
+        
+
+        height: 37rem;
       }
+    }
+    &-info {
+      margin-top: auto;
     }
     .octagon-card {
       @include octagon-bg(1rem, 3rem);
@@ -921,6 +934,13 @@
       transition-property: padding;
       transition-duration: 0.3s;
       transition-timing-function: ease;
+
+      
+
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 2rem 3rem;
+
       @include media-screen {
         @include octagon-bg(2rem, 2rem);
         padding: 4rem 2rem 4rem 4rem;
@@ -939,6 +959,9 @@
     }
     .news__slide-title {
       font-size: 1.8rem;
+      transition-property: font-size;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
       @include media-screen {
         font-size: 3.6rem;
       }
@@ -951,6 +974,8 @@
     @include media-screen-max {
       &-top-box {
         margin-bottom: 3rem;
+
+        margin: 0;
       }
       &-date {
         color: $text-color;
@@ -963,6 +988,8 @@
         color: $text-color;
         -webkit-line-clamp: 7;
         -webkit-box-orient: vertical;
+
+        height: 17rem;
       }
       .octagon-card {
         padding: 5rem;

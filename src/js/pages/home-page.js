@@ -261,6 +261,7 @@ $(document).ready(function () {
   new Swiper('.news__slider', {
     modules: [Navigation],
     slidesPerView: '1.1',
+    speed: 400,
     grabCursor: true,
     navigation: {
       nextEl: '.news__swiper-btn-next',
