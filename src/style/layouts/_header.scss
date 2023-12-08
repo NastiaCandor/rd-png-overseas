@@ -162,8 +162,15 @@
     transition-property: color;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
+    a {
+      transition-property: color;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
     &:hover {
-      color: $contrast-color;
+      a {
+        color: $contrast-color;
+      }
     }
   }
 }
