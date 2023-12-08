@@ -388,3 +388,190 @@
     margin: 1.5rem 0 0;
   }
 }
+
+.about-adv {
+  padding-bottom: 22rem;
+  &__title {
+    margin-bottom: 9rem;
+  }
+  &__item {
+    padding: 4rem 0;
+    border-top: solid 0.1rem transparent;
+    border-bottom: solid 0.1rem transparent;
+    border-image: $border-gradient;
+    border-image-slice: 1;
+    &-top {
+      display: flex;
+      &.active {
+        .about-adv__item-btn::before {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &-number {
+      width: 53.5rem;
+    }
+    &-btn {
+      margin-left: auto;
+      width: 5.6rem;
+      height: 5.6rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      @include media-screen {
+        width: 7.2rem;
+        height: 7.2rem;
+      }
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgb(199,255,81);
+        background: $border-gradient-reverse;
+        @include octagon-border(0.5rem);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &::before {
+        content: '';
+        display: block;
+        background-image: url(./assets/images/slider-arrow-left.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 1.3rem;
+        height: 2.2rem;
+        transform: rotate(-90deg);
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        @include media-screen {
+          width: 1.4rem;
+          height: 2.5rem;
+        }
+      }
+    }
+    &-title {
+      width: 72rem;
+    }
+    &-info {
+      margin: 3.5rem 29rem 0rem 53.5rem;
+      display: none;
+    }
+    &-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 9;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      br {
+        content: "";
+        display: block;
+        margin: 2rem 0;
+      }
+      &.show {
+        display: block;
+      }
+    }
+    &-view-all {
+      margin-top: 2rem;
+      width: fit-content;
+    }
+  }
+}
+
+.licenses {
+  position: relative;
+  padding-bottom: 22rem;
+  &__title {
+    margin-bottom: 6rem;
+  }
+  &__slider-wrapper {
+    max-width: 192rem;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  &__swiper {
+    padding-left: 18rem;
+  }
+  &__slide {
+    &-content {
+      display: block;
+      height: 66rem;
+      width: 49.3rem;
+      cursor: pointer;
+      .octagon-card-box {
+        height: 53rem;
+        width: 49.3rem;
+      }
+      &:hover {
+        .licenses__slide-loop {
+          background-color: rgba(255, 255, 255, 0.50);;
+        }
+      }
+    }
+    &-img-box {
+      scale: 0.9;
+    }
+    &-loop {
+      @include octagon-bg(0.5rem, 0rem);
+      left: auto;
+      top: auto;
+      background-color: transparent;
+      width: 5.6rem;
+      height: 5.6rem;
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-property: background-color;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include octagon-border(0.5rem);
+        width: 100%;
+        height: 100%;
+        background: $border-gradient;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-image: url(./assets/images/loop-icon.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    }
+    &-title {
+      margin: 4rem 0 0 2.5rem;
+      font-family: "Euclid Circular A";
+      @include font(2.4rem, 125%, 500);
+    }
+    &-subtitle {
+      margin: 1rem 0 0 2.5rem;
+    }
+  }
+  &__swiper-btns {
+    position: absolute;
+    top: 0;
+    right: calc(50% - 78rem);
+  }
+  &__swiper-btn-prev, &__swiper-btn-next {
+    width: 5.5rem;
+    height: 5.5rem;
+    &::after {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
