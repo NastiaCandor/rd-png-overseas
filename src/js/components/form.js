@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     if (!validateFeedbackForm()) {
       return false;
+    } else {
+      $('.modal-thanks').addClass('active');
+      return false;
     }
   })
 

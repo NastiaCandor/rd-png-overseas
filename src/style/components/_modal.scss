@@ -44,8 +44,9 @@
     @include media-screen {
       width: 8rem;
       height: 8rem;
-      top: 5rem;
-      right: 3rem;
+      top: 8rem;
+      right: 8rem;
+      padding: 2.8rem;
     }
     &:after {
       content: '';
@@ -76,6 +77,9 @@
     background: $dark-purple-bg-color;
     @include octagon-bg(2rem, 0rem);
     width: 102.6rem;
+    @include media-screen {
+      width: 66rem;
+    }
   }
 }
 
@@ -84,10 +88,16 @@
     padding: 5rem 6rem 0rem 5rem;
     display: flex;
     justify-content: space-between;
+    @include media-screen {
+      padding: 13rem 3rem 0rem 3rem;
+    }
   }
   &__info {
     width: 52rem;
     padding-bottom: 5rem;
+    @include media-screen {
+      width: 100%;
+    }
   }
   &__img-box {
     width: 36rem;
@@ -131,9 +141,15 @@
         margin-bottom: -2rem;
       }
     }
+    @include media-screen {
+      display: none;
+    }
   }
   &__position {
     margin-bottom: 1.2rem;
+    @include media-screen {
+      margin-bottom: 2.2rem;
+    }
   }
   &__name {
     padding-bottom: 2rem;
@@ -142,6 +158,13 @@
     border-image: $border-gradient;
     border-image-slice: 1;
     width: 38rem;
+    @include media-screen {
+      font-size: 2.4rem;
+      line-height: 150%;
+      padding-bottom: 4rem;
+      margin-bottom: 4rem;
+      width: 100%;
+    }
   }
   &__text {
     br {
@@ -155,6 +178,9 @@
 .modal-thanks {
   &__card {
     padding: 15.5rem 10.5rem 15rem;
+    @include media-screen {
+      padding: 20rem 5rem;
+    }
   }
   &__title {
     text-align: center;
@@ -163,5 +189,8 @@
   &__subtitle {
     text-align: center;
     color: $text-color;
+    @include media-screen {
+      font-size: 2.8rem;
+    }
   }
 }
