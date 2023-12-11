@@ -121,3 +121,20 @@
     }
   }
 }
+
+.feedback_contact-side {
+  .questions__title {
+    padding-bottom: 4rem;
+  }
+  .questions__wrapper {
+    justify-content: flex-start;
+  }
+  .questions__subtitle {
+    width: 46rem;
+    margin: 6rem 0 0rem;
+  }
+  .feedback__comment-block .form__input {
+    min-height: 6rem;
+    height: 6rem;
+  }
+}
