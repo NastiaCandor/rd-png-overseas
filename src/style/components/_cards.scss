@@ -32,6 +32,10 @@ $octagon-clip-width: 3rem;
   padding: 5rem 4rem 4rem;
   display: flex;
   flex-direction: column;
+  @include media-screen {
+    width: 100%;
+    padding: 5rem 4rem;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -46,12 +50,23 @@ $octagon-clip-width: 3rem;
   &__title {
     height: 9rem;
     overflow: hidden;
+    @include media-screen {
+      font-size: 2.4rem;
+      line-height: 150%;
+    }
   }
   &__img-box {
     width: 3.2rem;
     height: 3.2rem;
+    @include media-screen {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
   }
   &__text {
     margin-top: 2.4rem;
+    @include media-screen {
+      margin-top: 1.7rem;
+    }
   }
 }

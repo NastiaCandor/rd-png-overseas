@@ -33,28 +33,26 @@ $(document).ready(function () {
       modules: [Navigation],
       slidesPerView: 2.25,
       speed: 600,
-      // centeredSlides: true,
       navigation: {
         nextEl: '.history__swiper-btn-next',
         prevEl: '.history__swiper-btn-prev',
       },
-      // spaceBetween: 30,
     });
   } else {
-    // historySwiper = new Swiper('.history__swiper', {
-    //   modules: [Navigation],
-    //   slidesPerView: '2.1',
-    //   navigation: {
-    //     nextEl: '.history__swiper-btn-next',
-    //     prevEl: '.history__swiper-btn-prev',
-    //   },
-    //   spaceBetween: 30,
-    // });
+    historySwiper = new Swiper('.history__swiper', {
+      modules: [Navigation],
+      slidesPerView: 1.1,
+      speed: 400,
+      navigation: {
+        nextEl: '.history__swiper-btn-next',
+        prevEl: '.history__swiper-btn-prev',
+      },
+    });
   }
 
-  // $(window).resize(function () {
-	// 	changeSlider();
-	// });
+  $(window).resize(function () {
+		changeSlider();
+	});
 
   function changeSlider() {
     if (screen.width < 769) {
@@ -63,12 +61,12 @@ $(document).ready(function () {
       historySwiper.destroy();
       historySwiper = new Swiper('.history__swiper', {
         modules: [Navigation],
-        slidesPerView: '2.1',
+        slidesPerView: 1.1,
+        speed: 400,
         navigation: {
           nextEl: '.history__swiper-btn-next',
           prevEl: '.history__swiper-btn-prev',
         },
-        spaceBetween: 30,
       });
     } else {
       if ($('.history__swiper').data('platform') != 'mobile') return;
@@ -76,15 +74,24 @@ $(document).ready(function () {
       historySwiper.destroy();
       historySwiper = new Swiper('.history__swiper', {
         modules: [Navigation],
-        slidesPerView: '2.1',
+        slidesPerView: 2.25,
+        speed: 600,
         navigation: {
           nextEl: '.history__swiper-btn-next',
           prevEl: '.history__swiper-btn-prev',
         },
-        spaceBetween: 30,
       });
     }
   }
+});
+
+// PEOPLE section
+$(document).ready(function () {
+  if (!document.querySelector('.people')) return;
+
+  $('.people__view-all-btn').click(function() {
+    $('.people__wrapper').addClass('show');
+  });
 });
 
 // ABOUT-ADV section
@@ -135,14 +142,48 @@ $(document).ready(function () {
       },
     });
   } else {
-    // historySwiper = new Swiper('.history__swiper', {
-    //   modules: [Navigation],
-    //   slidesPerView: '2.1',
-    //   navigation: {
-    //     nextEl: '.history__swiper-btn-next',
-    //     prevEl: '.history__swiper-btn-prev',
-    //   },
-    //   spaceBetween: 30,
-    // });
+    licensesSwiper = new Swiper('.licenses__swiper', {
+      modules: [Navigation],
+      slidesPerView: 1.4,
+      speed: 500,
+      navigation: {
+        nextEl: '.licenses__swiper-btn-next',
+        prevEl: '.licenses__swiper-btn-prev',
+      },
+    });
+  }
+
+  $(window).resize(function () {
+		changeSlider();
+	});
+
+  function changeSlider() {
+    if (screen.width < 769) {
+      if ($('.licenses__swiper').data('platform') != 'desktop') return;
+      $(".licenses__swiper").data("platform", "mobile");
+      licensesSwiper.destroy();
+      licensesSwiper = new Swiper('.licenses__swiper', {
+        modules: [Navigation],
+        slidesPerView: 1.4,
+        speed: 500,
+        navigation: {
+          nextEl: '.licenses__swiper-btn-next',
+          prevEl: '.licenses__swiper-btn-prev',
+        },
+      });
+    } else {
+      if ($('.licenses__swiper').data('platform') != 'mobile') return;
+      $(".licenses__swiper").data("platform", "desktop");
+      licensesSwiper.destroy();
+      licensesSwiper = new Swiper('.licenses__swiper', {
+        modules: [Navigation],
+        slidesPerView: 3,
+        speed: 500,
+        navigation: {
+          nextEl: '.licenses__swiper-btn-next',
+          prevEl: '.licenses__swiper-btn-prev',
+        },
+      });
+    }
   }
 });

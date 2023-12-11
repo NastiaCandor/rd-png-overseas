@@ -2,6 +2,8 @@ import $ from "jquery";
 
 // PERSON modal
 $(document).ready(function () {
+  if (!document.querySelector('.modal-person')) return;
+
   const personModal = document.querySelector('.modal-person');
   const modal = document.querySelector('.modal');
   const closeModalBtn = document.querySelector('.modal__close')
@@ -54,6 +56,8 @@ $(document).ready(function () {
 
 // THANKS modal
 $(document).ready(function () {
+  if (!document.querySelector('.modal-thanks')) return;
+
   const thanksModal = document.querySelector('.modal-thanks');
   const closeModalBtn = $('.modal-thanks').find('.modal__close');
   
