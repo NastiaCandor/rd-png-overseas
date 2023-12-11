@@ -8,6 +8,7 @@ import '@splidejs/splide/css';
 import './js/components/burger';
 import './js/components/header';
 import './js/components/form';
+import './js/components/modal';
 
 // UTILS
 import './js/utils/jquery.mask';

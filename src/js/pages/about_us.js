@@ -127,7 +127,7 @@ $(document).ready(function () {
   if (screen.width > 769) {
     licensesSwiper = new Swiper('.licenses__swiper', {
       modules: [Navigation],
-      slidesPerView: 3.3,
+      slidesPerView: 3,
       speed: 500,
       navigation: {
         nextEl: '.licenses__swiper-btn-next',
