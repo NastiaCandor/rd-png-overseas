@@ -19,7 +19,7 @@
         <div class="career-banner__photo">
           <div class="career-banner__card-bg">
             <div class="career-banner__card">
-              <p class="career-banner__card-title">more than 50 vacancies</p>
+              <p class="career-banner__card-title">more than<br>50 vacancies</p>
               <p class="caree-banner__card-text genl-text-reg">We have over 50 vacancies and all you need to do is fill out an application form and send it to us.</p>
             </div>
           </div>
@@ -36,33 +36,49 @@
           <p class="caring__subtitle genl-text-reg">Each team member is involved in the work process from the first day of working in the company. The company provides its employees with ample opportunities for training, professional development and career growth.</p>
         </div>
         <div class="caring__display">
-          <div class="caring__item value-card">
-            <p class="caring__item-title genl-description value-card__title">contract</p>
-            <div class="caring__item-icon-box value-card__img-box">
-              <img src="./assets/images/caring-contract.svg" alt="" class="caring__item-icon">
+          <div class="caring__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="caring__item value-card">
+                  <p class="caring__item-title genl-description value-card__title">contract</p>
+                  <div class="caring__item-icon-box value-card__img-box">
+                    <img src="./assets/images/caring-contract.svg" alt="" class="caring__item-icon">
+                  </div>
+                  <p class="caring__item-text genl-text-reg value-card__text">Оfficial employment on the basis of an employment contract in accordance with the Labor Code</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="caring__item value-card">
+                  <p class="caring__item-title genl-description value-card__title">insurance</p>
+                  <div class="caring__item-icon-box value-card__img-box">
+                    <img src="./assets/images/caring-insurance.svg" alt="" class="caring__item-icon">
+                  </div>
+                  <p class="caring__item-text genl-text-reg value-card__text">Оfficial employment on the basis of an employment contract in accordance with the Labor Code</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="caring__item value-card">
+                  <p class="caring__item-title genl-description value-card__title">vacation</p>
+                  <div class="caring__item-icon-box value-card__img-box">
+                    <img src="./assets/images/caring-vacation.svg" alt="" class="caring__item-icon">
+                  </div>
+                  <p class="caring__item-text genl-text-reg value-card__text">Оfficial employment on the basis of an employment contract in accordance with the Labor Code</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="caring__item value-card">
+                  <p class="caring__item-title genl-description value-card__title">compensation</p>
+                  <div class="caring__item-icon-box value-card__img-box">
+                    <img src="./assets/images/caring-compansation.svg" alt="" class="caring__item-icon">
+                  </div>
+                  <p class="caring__item-text genl-text-reg value-card__text">Оfficial employment on the basis of an employment contract in accordance with the Labor Code</p>
+                </div>
+              </div>
             </div>
-            <p class="caring__item-text genl-text-reg value-card__text">Оfficial employment on the basis of an employment contract in accordance with the Labor Code</p>
-          </div>
-          <div class="caring__item value-card">
-            <p class="caring__item-title genl-description value-card__title">insurance</p>
-            <div class="caring__item-icon-box value-card__img-box">
-              <img src="./assets/images/caring-insurance.svg" alt="" class="caring__item-icon">
+            <div class="caring__swiper-btns slider-navigation__wrapper">
+              <div class="caring__swiper-btn-prev slider-btn-prev"></div>
+              <div class="caring__swiper-btn-next slider-btn-next"></div>
             </div>
-            <p class="caring__item-text genl-text-reg value-card__text">Оfficial employment on the basis of an employment contract in accordance with the Labor Code</p>
-          </div>
-          <div class="caring__item value-card">
-            <p class="caring__item-title genl-description value-card__title">vacation</p>
-            <div class="caring__item-icon-box value-card__img-box">
-              <img src="./assets/images/caring-vacation.svg" alt="" class="caring__item-icon">
-            </div>
-            <p class="caring__item-text genl-text-reg value-card__text">Оfficial employment on the basis of an employment contract in accordance with the Labor Code</p>
-          </div>
-          <div class="caring__item value-card">
-            <p class="caring__item-title genl-description value-card__title">compensation</p>
-            <div class="caring__item-icon-box value-card__img-box">
-              <img src="./assets/images/caring-compansation.svg" alt="" class="caring__item-icon">
-            </div>
-            <p class="caring__item-text genl-text-reg value-card__text">Оfficial employment on the basis of an employment contract in accordance with the Labor Code</p>
           </div>
         </div>
       </div>
@@ -73,39 +89,39 @@
         <div class="vacancies__input-search-box">
           <input type="text" class="vacancies__input-search" placeholder="Search">
         </div>
-        <form class="vacancies__filter-box genl-text-reg">
+        <div class="vacancies__filter-box genl-text-reg">
           <p class="vacancies__filter-title">Filter</p>
-          <div class="vacancies__filter-drop">
+          <form class="vacancies__filter-drop vacancies__form">
             <fieldset class="vacancies__filter-fieldset">
               <legend class="vacancies__filter-legend">Job Functions</legend>
               <div class="vacancies__filter-second">
                 <div class="vacancies__filter-item">
                   <input name="administrative" type="checkbox" id="administrative" value="Administrative" class="vacancies__filter-input">
-                  <label for="administrative" class="vanancies__filter-label">
+                  <label for="administrative" class="vacancies__filter-label">
                     Administrative
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input type="checkbox" id="engineering" value="Engineering" name="engineering" class="vacancies__filter-input">
-                  <label for="engineering" class="vanancies__filter-label">
+                  <label for="engineering" class="vacancies__filter-label">
                     Engineering
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="finance-accounting " type="checkbox" id="finance-accounting" value="Finance & Accounting " class="vacancies__filter-input">
-                  <label for="finance-accounting" class="vanancies__filter-label">
+                  <label for="finance-accounting" class="vacancies__filter-label">
                     Finance & Accounting 
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="HR" type="checkbox" id="HR" value="HR" class="vacancies__filter-input">
-                  <label for="HR" class="vanancies__filter-label">
+                  <label for="HR" class="vacancies__filter-label">
                     HR
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="IT" type="checkbox" id="IT" value="IT" class="vacancies__filter-input">
-                  <label for="IT" class="vanancies__filter-label">
+                  <label for="IT" class="vacancies__filter-label">
                     IT
                   </label>
                 </div>
@@ -116,31 +132,31 @@
               <div class="vacancies__filter-second">
                 <div class="vacancies__filter-item">
                   <input name="malta" type="checkbox" id="malta" value="malta" class="vacancies__filter-input">
-                  <label for="malta" class="vanancies__filter-label">
+                  <label for="malta" class="vacancies__filter-label">
                     Malta
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input type="checkbox" id="libya" value="libya" name="libya" class="vacancies__filter-input">
-                  <label for="libya" class="vanancies__filter-label">
+                  <label for="libya" class="vacancies__filter-label">
                     Libya
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="qatar" type="checkbox" id="qatar" value="qatar" class="vacancies__filter-input">
-                  <label for="qatar" class="vanancies__filter-label">
+                  <label for="qatar" class="vacancies__filter-label">
                     Qatar
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="kuwait" type="checkbox" id="kuwait" value="kuwait" class="vacancies__filter-input">
-                  <label for="kuwait" class="vanancies__filter-label">
+                  <label for="kuwait" class="vacancies__filter-label">
                     Kuwait
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="remote" type="checkbox" id="remote" value="Remote/Hybrid" class="vacancies__filter-input">
-                  <label for="remote" class="vanancies__filter-label">
+                  <label for="remote" class="vacancies__filter-label">
                     Remote/Hybrid
                   </label>
                 </div>
@@ -152,31 +168,31 @@
               <div class="vacancies__filter-second">
                 <div class="vacancies__filter-item">
                   <input name="internship" type="checkbox" id="internship" value="Internship" class="vacancies__filter-input">
-                  <label for="internship" class="vanancies__filter-label">
+                  <label for="internship" class="vacancies__filter-label">
                     Internship
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input type="checkbox" id="entry-level" value="Entry level (1-2 years)" name="entry-level" class="vacancies__filter-input">
-                  <label for="entry-level" class="vanancies__filter-label">
+                  <label for="entry-level" class="vacancies__filter-label">
                     Entry level (1-2 years)
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="mid-senior-level" type="checkbox" id="mid-senior-level" value="Mid Senior Level" class="vacancies__filter-input">
-                  <label for="mid-senior-level" class="vanancies__filter-label">
+                  <label for="mid-senior-level" class="vacancies__filter-label">
                     Mid Senior Level 
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="director" type="checkbox" id="director" value="Director" class="vacancies__filter-input">
-                  <label for="director" class="vanancies__filter-label">
+                  <label for="director" class="vacancies__filter-label">
                     Director
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="executive" type="checkbox" id="executive" value="Executive" class="vacancies__filter-input">
-                  <label for="executive" class="vanancies__filter-label">
+                  <label for="executive" class="vacancies__filter-label">
                     Executive
                   </label>
                 </div>
@@ -187,54 +203,51 @@
               <div class="vacancies__filter-second">
                 <div class="vacancies__filter-item">
                   <input name="full-time" type="checkbox" id="full-time" value="Full-time" class="vacancies__filter-input">
-                  <label for="full-time" class="vanancies__filter-label">
+                  <label for="full-time" class="vacancies__filter-label">
                     Full-time
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input type="checkbox" id="part-time" value="Part-time" name="part-time" class="vacancies__filter-input">
-                  <label for="part-time" class="vanancies__filter-label">
+                  <label for="part-time" class="vacancies__filter-label">
                     Part-time
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="contract" type="checkbox" id="contract" value="Contract" class="vacancies__filter-input">
-                  <label for="contract" class="vanancies__filter-label">
+                  <label for="contract" class="vacancies__filter-label">
                     Contract 
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="temporary" type="checkbox" id="temporary" value="Temporary" class="vacancies__filter-input">
-                  <label for="temporary" class="vanancies__filter-label">
+                  <label for="temporary" class="vacancies__filter-label">
                     Temporary
                   </label>
                 </div>
                 <div class="vacancies__filter-item">
                   <input name="internship-type" type="checkbox" id="internship-type" value="Internship" class="vacancies__filter-input">
-                  <label for="internship-type" class="vanancies__filter-label">
+                  <label for="internship-type" class="vacancies__filter-label">
                     Internship
                   </label>
                 </div>
               </div>
             </fieldset>
-          </div>
-
-        </form>
+          </form>
+        </div>
         <div class="vacancies__filter-result genl-text-reg"></div>
         <div class="vacancies__display">
           <div class="vacancies__item">
-            <div class="vacancies__item-aside">
-              <p class="vacancies__item-number genl-numeric">01</p>
-              <div class="vacancies__item-tags genl-text-reg">
-                <div class="vacancies__item-tag">
-                  Work experience: 1-3 years
-                </div>
-                <div class="vacancies__item-tag">
-                  Full-time employment
-                </div>
-                <div class="vacancies__item-tag">
-                  Shift method
-                </div>
+            <p class="vacancies__item-number genl-numeric">01</p>
+            <div class="vacancies__item-tags genl-text-reg">
+              <div class="vacancies__item-tag">
+                Work experience: 1-3 years
+              </div>
+              <div class="vacancies__item-tag">
+                Full-time employment
+              </div>
+              <div class="vacancies__item-tag">
+                Shift method
               </div>
             </div>
             <div class="vacancies__item-info">
@@ -332,6 +345,175 @@
           </div>
         </div>
         <div class="modal__border"></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal-filter">
+    <div class="modal__inner">
+      <div class="modal__content">
+        <div class="modal__close">
+          <img src="./assets/images/burger-close-icon.svg" alt="x" class="modal__close-icon">
+        </div>
+        <p class="modal-filter__title genl-h2-title">Filter</p>
+        <form class="vacancies__form genl-text-reg">
+          <div class="vacancies__form-drop">
+            <div class="modal-filter__field-box">
+              <fieldset class="vacancies__filter-fieldset">
+                <legend class="vacancies__filter-legend">Job Functions</legend>
+                <div class="vacancies__filter-second">
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="administrative">
+                      <input type="checkbox" id="administrative" value="Administrative" class="vacancies__filter-input">
+                      Administrative
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="engineering">
+                      <input type="checkbox" id="engineering" value="Engineering" class="vacancies__filter-input">
+                      Engineering
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="finance-accounting">
+                      <input type="checkbox" id="finance-accounting" value="Finance & Accounting " class="vacancies__filter-input">
+                      Finance & Accounting 
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="HR">
+                      <input  type="checkbox" id="HR" value="HR" class="vacancies__filter-input">
+                      HR
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="IT">
+                      <input type="checkbox" id="IT" value="IT" class="vacancies__filter-input">
+                      IT
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="modal-filter__field-box">
+              <fieldset class="vacancies__filter-fieldset">
+                <legend class="vacancies__filter-legend">Location</legend>
+                <div class="vacancies__filter-second">
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="malta">
+                      <input type="checkbox" id="malta" value="malta" class="vacancies__filter-input">
+                      Malta
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="libya">
+                      <input type="checkbox" id="libya" value="libya" class="vacancies__filter-input">
+                      Libya
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label  class="vacancies__filter-label vacancies__form-label" id="qatar">
+                      <input  type="checkbox" id="qatar" value="qatar" class="vacancies__filter-input">
+                      Qatar
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="kuwait">
+                      <input type="checkbox" id="kuwait" value="kuwait" class="vacancies__filter-input">
+                      Kuwait
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="remote">
+                      <input  type="checkbox" id="remote" value="Remote/Hybrid" class="vacancies__filter-input">
+                      Remote/Hybrid
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="modal-filter__field-box">
+              <fieldset class="vacancies__filter-fieldset">
+                <legend class="vacancies__filter-legend">Seniority Level</legend>
+                <div class="vacancies__filter-second">
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="internship">
+                      <input type="checkbox" id="internship" value="Internship" class="vacancies__filter-input">
+                      Internship
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="entry-level">
+                      <input type="checkbox" id="entry-level" value="Entry level (1-2 years)" class="vacancies__filter-input">
+                      Entry level (1-2 years)
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="mid-senior-level">
+                      <input type="checkbox" id="mid-senior-level" value="Mid Senior Level" class="vacancies__filter-input">
+                      Mid Senior Level 
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="director">
+                      <input type="checkbox" id="director" value="Director" class="vacancies__filter-input">
+                      Director
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="executive">
+                      <input name="executive" type="checkbox" id="executive" value="Executive" class="vacancies__filter-input">
+                      Executive
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="modal-filter__field-box">
+              <fieldset class="vacancies__filter-fieldset">
+                <legend class="vacancies__filter-legend">Job Type</legend>
+                <div class="vacancies__filter-second">
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="full-time">
+                      <input name="full-time" type="checkbox" id="full-time" value="Full-time" class="vacancies__filter-input">
+                      Full-time
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="part-time">
+                      <input type="checkbox" id="part-time" value="Part-time" name="part-time" class="vacancies__filter-input">
+                      Part-time
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="contract">
+                      <input type="checkbox" id="contract" value="Contract" class="vacancies__filter-input">
+                      Contract 
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="temporary">
+                      <input type="checkbox" id="temporary" value="Temporary" class="vacancies__filter-input">
+                      Temporary
+                    </label>
+                  </div>
+                  <div class="vacancies__filter-item">
+                    <label class="vacancies__filter-label vacancies__form-label" id="internship-type">
+                      <input type="checkbox" id="internship-type" value="Internship" class="vacancies__filter-input">
+                      Internship
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <button class="vacancies__form-apply-btn btn-rect btn-rect_purple">Apply
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 5.01509L14.9822 1" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M19 4.99513L14.9924 9.00002" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M0.999993 4.99512L18.9902 4.99512" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </form>
       </div>
     </div>
   </div>

@@ -194,3 +194,103 @@
     }
   }
 }
+
+.modal-filter {
+  .modal__inner {
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(149deg, #272727 -11.32%, #3F2E50 9.74%, #272727 41.3%, #272727 63.22%);
+  }
+  .vacancies__form-drop {
+    padding: 0;
+    position: relative;
+  }
+  .modal__content {
+    padding: 8rem 2rem;
+  }
+  .modal__close {
+    top: 7rem;
+    right: 0rem;
+    padding: 2.5rem;
+    &::after {
+      display: none;
+    }
+  }
+  .vacancies__form {
+    margin-top: 2rem;
+  }
+  .vacancies__filter {
+    &-drop {
+      display: block;
+      padding: 0;
+      &::before {
+        display: none;
+      }
+    }
+    &-legend {
+      padding: 0;
+      text-transform: uppercase;
+      font-size: 2.4rem;
+      line-height: 150%;
+      letter-spacing: 0.12rem;
+      gap: 2.5rem;
+      &::after {
+        width: 1.7rem;
+        height: 3rem;
+      }
+    }
+    &-second {
+      padding: 3rem 0 0 0rem;
+    }
+    &-item {
+      padding: 2rem 0;
+    }
+    &-input {
+      /* Add if not using autoprefixer */
+      -webkit-appearance: none;
+      appearance: none;
+      /* For iOS < 15 to remove gradient background */
+      background-color: transparent;
+      /* Not removed via appearance */
+      margin: 0;
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      border: solid 0.1rem $text-color;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:checked {
+        border-color: $contrast-color;
+        &:after {
+          content: '';
+          display: block;
+          background-image: url(./assets/images/checkbox-icon.svg);
+          background-repeat: no-repeat;
+          background-size: 100%;
+          width: 2.4rem;
+          height: 1.5rem;
+
+        }
+      }
+    }
+    &-label {
+      display: flex;
+      gap: 2rem;
+      &.active {
+        color: $contrast-color;
+      }
+    }
+  }
+  &__field-box {
+    padding: 5rem 0;
+    border-bottom: solid 0.1rem transparent;
+    border-image: $border-gradient;
+    border-image-slice: 1;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
