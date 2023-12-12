@@ -98,7 +98,6 @@ $(document).ready(function () {
       spaceBetween: 30,
     });
   } else {
-    console.log('first mob');
     landRigsSwiper = new Swiper('.land-rigs__info-slider', {
       modules: [Navigation],
       slidesPerView: 1,
@@ -154,7 +153,6 @@ $(document).ready(function () {
 
   // Show more btn
   $('.land-rigs__slide-more-btn').click(function(e) {
-    console.log($(this).closest('.land-rigs__slide-text').children('.land-rigs__info-list'));
     const list = $(this).closest('.land-rigs__slide-text').children('.land-rigs__info-list');
     if (list.css('display') === 'none') {
       list.slideDown(400);
