@@ -1,0 +1,327 @@
+.career-banner {
+  padding: 10rem 0 21rem;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info {
+    width: 68rem;
+  }
+  &__photo {
+    width: 63rem;
+    position: relative;
+    padding-bottom: 5rem;
+  }
+  &__subtitle {
+    color: $contrast-color;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    margin-bottom: 3rem;
+  }
+  &__img-box {
+    @include octagon-bg(2rem, 0rem);
+    width: 49.3rem;
+    height: 40.2rem;
+    filter: grayscale(0.2);
+  }
+  &__card {
+    @include octagon-bg(1rem, 0rem);
+    background: $dark-purple-bg-color;
+    width: 30rem;
+    height: fit-content;
+    padding: 5rem 2rem;
+    margin: 2rem;
+    &-bg {
+      position: relative;
+      position: absolute;
+      bottom: 0;
+      top: auto;
+      right: 0;
+      left: auto;
+      z-index: 1;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $border-gradient;
+        @include octagon-border(1.5rem);
+      }
+    }
+    &-title {
+      font-family: "Euclid Circular A";
+      @include font(1.8rem, normal, 600);
+      text-transform: uppercase;
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+
+.caring {
+  padding-bottom: 21rem;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 11rem;
+  }
+  &__title {
+    width: 78rem;
+  }
+  &__subtitle {
+    width: 63rem;
+  }
+  &__display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+}
+
+.vacancies {
+  padding-bottom: 22rem;
+  .container {
+    display: grid;
+    position: relative;
+  }
+  &__title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  &__input-search-box {
+    position: relative;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    width: 35.5rem;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      background-image: url(./assets/images/loop-icon.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+  &__input-search {
+    width: 100%;
+    padding: 1.8rem 6rem 1.8rem 3rem;
+    color: $text-color;
+    font-family: "Euclid Circular A";
+    @include font(1.8rem, 125%, 600);
+    background-color: $dark-purple-bg-color;
+    position: relative;
+  }
+  &__filter-result {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin-left: 33rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-end;
+    margin-top: 5.5rem;
+    min-height: 6rem;
+    flex-wrap: wrap;
+    &-item {
+      border-radius: 3.2rem;
+      padding: 1.6rem;
+      background-color: $dark-purple-bg-color;
+      text-transform: capitalize;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      span {
+        cursor: pointer;
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-image: url(./assets/images/burger-close-icon.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+  &__filter {
+    &-box {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      position: absolute;
+      @include octagon-bg(0.5rem, 0rem);
+      top: 6rem;
+      left: 0;
+      width: 30rem; 
+      height: auto;
+      z-index: 1;
+      transition: background-color 0.3s ease;
+      &.active {
+
+        background-color: $dark-purple-bg-color;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $border-gradient;
+        @include octagon-border(0.5rem);
+      }
+    }
+    &-title {
+      height: auto;
+      padding: 1.6rem 2rem;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #FFF;
+      &::after {
+        content: '';
+        display: block;
+        background-image: url(./assets/images/filter-icon.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+    &-drop {
+      display: none;
+      padding: 0 1.5rem 1rem;
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 87%;
+        height: 0.1rem;
+        border-top: solid 0.1rem transparent;
+        border-image: $border-gradient;
+        border-image-slice: 1;
+      }
+    }
+    &-fieldset {
+      border: none;
+      padding: 0;
+    }
+    &-legend {
+      padding: 1.3rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      color: #FFF;
+      &::after {
+        content: '';
+        display: block;
+        background-image: url(./assets/images/slider-arrow-left.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 1rem;
+        height: 2rem;
+        transform: rotate(-90deg);
+        transition: transform 0.3s ease;
+      }
+      &.active {
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &-second {
+      display: none;
+      padding: 0 0 0 2rem;
+    }
+    &-item {
+      display: flex;
+      padding: 0.5rem 0;
+    }
+    &-input {
+      display: none;
+    }
+    &-label {
+      cursor: pointer;
+    }
+    &-input:checked + .vanancies__filter-label {
+      color: $contrast-color;
+    }
+  }
+  &__display {
+    grid-column: 1 / 3;
+    grid-row: 3 / 3;
+    margin-top: 4rem;
+  }
+  &__item {
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 0.1rem transparent;
+    border-top: solid 0.1rem transparent;
+    border-image: $border-gradient;
+    border-image-slice: 1;
+    &-aside {
+      width: 40rem;
+      display: flex;
+      flex-direction: column;
+    }
+    &-info {
+      width: 75.5rem;
+      display: flex;
+      flex-direction: column;
+      &.show {
+        .vacancies__item-desc {
+          height: auto;
+        }
+        .vacancies__item-text {
+          display: block;
+        }
+      }
+    }
+    &-resp {
+      width: 13.7rem;
+      display: flex;
+      align-items: flex-start;
+    }
+    &-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: auto;
+    }
+    &-tag {
+      padding: 1rem 1.5rem;
+      background-color: $dark-purple-bg-color;
+      border-radius: 3rem;
+    }
+    &-title {
+      margin-bottom: 5rem;
+    }
+    &-desc {
+      height: 22rem;
+      overflow: hidden;
+    }
+    &-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    &-view-all {
+      align-self: flex-start;
+      margin-top: 2rem;
+    }
+    &-resp-btn {
+      margin-left: auto;
+    }
+
+  }
+}

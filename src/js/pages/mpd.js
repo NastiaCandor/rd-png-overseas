@@ -79,7 +79,6 @@ $(document).ready(function () {
     e.preventDefault();
     if($(this).hasClass('active')){
       $(this).removeClass("active");
-      console.log($(this).siblings('.mpd-advan__item-info'));
       $(this).siblings('.mpd-advan__item-info').slideUp(400);
     } else {
       $(".mpd-advan__item-title").removeClass("active");
