@@ -136,7 +136,10 @@
     }
   }
   &__display {
-
+    .swiper-slide {
+      display: flex;
+      height: auto;
+    }
     @include media-screen-max {
       .swiper-slide {
         width: auto;
