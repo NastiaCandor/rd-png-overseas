@@ -226,6 +226,9 @@
   }
   &__swiper-wrapper {
     flex-direction: column;
+    @include media-screen {
+      flex-direction: row;
+    }
   }
   &__top {
     display: flex;
