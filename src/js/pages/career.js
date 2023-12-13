@@ -122,6 +122,18 @@ $(document).ready(function () {
     $('.modal-filter').removeClass('active');
   });
 
+  $(window).resize(function () {
+		hideModal();
+	});
+
+  function hideModal() {
+    if (screen.width > 768) {
+      if (!$('.modal-filter').hasClass('active')) return;
+      $('.modal-filter').removeClass('active');
+      $(document.body).css('overflow', 'auto');
+    }
+  }
+
   // close filter menu
   document.addEventListener('click', (e) => {
     if (screen.width < 768) return;
