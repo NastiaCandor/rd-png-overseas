@@ -2,6 +2,14 @@ import $ from "jquery";
 import Swiper from 'swiper';
 import { Mousewheel, Navigation } from 'swiper/modules';
 
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+
+gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
+
 // Functions
 var rem = function rem() {
   var html = document.getElementsByTagName('html')[0];
@@ -85,18 +93,18 @@ $(document).ready(function () {
 			: $(".land-rigs__info-slider").data("platform", "desktop");
 	}
   if (screen.width > 769) {
-    landRigsSwiper = new Swiper('.land-rigs__info-slider', {
-      modules: [Mousewheel],
-      slidesPerView: 1,
-      speed: 1000,
-      direction: "vertical",
-      mousewheel: {
-        releaseOnEdges: true,
-        // eventsTarget: '.land-rigs',
-        // thresholdDelta: 1,
-      },
-      spaceBetween: 30,
-    });
+    // landRigsSwiper = new Swiper('.land-rigs__info-slider', {
+    //   modules: [Mousewheel],
+    //   slidesPerView: 1,
+    //   speed: 1000,
+    //   direction: "vertical",
+    //   // mousewheel: {
+    //   //   releaseOnEdges: true,
+    //   //   eventsTarget: '.land-rigs',
+    //   //   // thresholdDelta: 1,
+    //   // },
+    //   spaceBetween: 30,
+    // });
   } else {
     landRigsSwiper = new Swiper('.land-rigs__info-slider', {
       modules: [Navigation],
@@ -136,20 +144,54 @@ $(document).ready(function () {
       if ($('.land-rigs__info-slider').data('platform') != 'mobile') return;
       $(".land-rigs__info-slider").data("platform", "desktop");
       landRigsSwiper.destroy();
-      landRigsSwiper = new Swiper('.land-rigs__info-slider', {
-        modules: [Mousewheel],
-        slidesPerView: 1,
-        speed: 1000,
-        direction: "vertical",
-        mousewheel: {
-          releaseOnEdges: true,
-          // eventsTarget: '.land-rigs',
-          // thresholdDelta: 1,
-        },
-        spaceBetween: 30,
-      });
+      // landRigsSwiper = new Swiper('.land-rigs__info-slider', {
+      //   modules: [Mousewheel],
+      //   slidesPerView: 1,
+      //   speed: 1000,
+      //   direction: "vertical",
+      //   // mousewheel: {
+      //   //   releaseOnEdges: true,
+      //   //   eventsTarget: '.land-rigs',
+      //   //   // thresholdDelta: 1,
+      //   // },
+      //   spaceBetween: 30,
+      // });
+
+      
     }
   }
+
+  const slides = gsap.utils.toArray('.land-rigs__info-slide.swiper-slide');
+  const landRigsWrapper = document.querySelector('.land-rigs__info-slider .swiper-wrapper');
+  const landRigsSlider = document.querySelector('.land-rigs__info-slider');
+  // const timeLine = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '.land-rigs',
+  //     pin: '.land-rigs',
+  //     start: 'top top',
+  //     scrub: 1,
+  //     snap: 1 / (slides.length - 1),
+  //     markers: true,
+  //     end: () => "+=" + (slides.length * slides[0].offsetWidth),
+  //   },
+  // });
+  // console.log(slides[0].offsetHeight);
+  // timeLine.to(landRigsWrapper, {
+  //   // y: -(1000),
+  //   yPercent: -100 * (slides.length - 1),
+  //   // yPercent: -100 * (4),
+  // });
+  gsap.to(slides, {
+    yPercent: -100 * (slides.length - 1),
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.land-rigs',
+      pin: true,
+      scrub: 1,
+      snap: 1 / (slides.length - 1),
+      end: () => '+=' + landRigsWrapper.offsetWidth
+    }
+  });
 
   // Show more btn
   $('.land-rigs__slide-more-btn').click(function(e) {
@@ -160,6 +202,7 @@ $(document).ready(function () {
       list.slideUp(400);
     }
   });
+
 
   // document.addEventListener("wheel", 
   //   function(e) { 

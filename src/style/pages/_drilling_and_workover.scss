@@ -82,7 +82,7 @@
 }
 
 .rigs-design {
-  padding-bottom: 22rem;
+  padding-bottom: 11rem;
   position: relative;
   @include media-screen {
     padding-bottom: 18rem;
@@ -220,8 +220,12 @@
 
 .land-rigs {
   padding-bottom: 22rem;
+  padding-top: 10rem;
   @include media-screen {
     padding-bottom: 20rem;
+  }
+  &__swiper-wrapper {
+    flex-direction: column;
   }
   &__top {
     display: flex;
