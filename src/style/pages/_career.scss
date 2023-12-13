@@ -298,6 +298,7 @@
         right: 0;
         top: 0.5rem;
         width: 14rem;
+        clip-path: border-box;
       }
       &.active {
         background-color: $dark-purple-bg-color;
@@ -551,6 +552,13 @@
       color: #FFF;
       gap: 2rem;
       margin-top: 15rem;
+      &::before {
+        top: calc(50% - 38rem);
+        transform: translateY(44rem);
+        left: calc(50% - 38rem);
+        width: 76rem;
+        height: 76rem;
+      }
     }
   }
 }
