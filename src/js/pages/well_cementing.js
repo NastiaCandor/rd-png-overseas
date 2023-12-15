@@ -91,70 +91,12 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: '.well-cem',
       pin: true,
-      // scrub: 2,
-      // snap: 1 / (sections.length - sections.length - 1),
       start: 'top top',
-      // end: () => '+=' + (sections.length * sections[0].offsetHeight),
       end: () => '+=' + quant * scrollStep,
       // end: '+=10000',
-      // end: '+=3000',
-      // fastScrollEnd: 3000,
-      // markers: true,
     }
   });
-  // tl.to(sections, {
-  //   yPercent: -(100 * (sections.length - 1)),
-  //   duration: duration,
-  //   ease: 'none'
-  // });
-  // const lenis = new Lenis({
-  //   smoothWheel: false,
-  // });
 
-  // lenis.on('scroll', (e) => {
-  //   console.log(e);
-  //   console.log(lenis.scroll);
-  // });
-  // // lenis.stop();
-  
-  // function raf(time) {
-  //   lenis.raf(time);
-  //   requestAnimationFrame(raf);
-  // }
-  
-  // requestAnimationFrame(raf);
-
-  // let swiper = new Swiper('.well-cem__swiper', {
-  //   modules: [Mousewheel],
-  //   slidesPerView: 1,
-  //   speed: 1000,
-  //   direction: "vertical",
-  //   mousewheel: {
-  //     releaseOnEdges: true,
-  //     eventsTarget: '.well-main',
-  //     // thresholdDelta: 1,
-  //   },
-  //   spaceBetween: 30,
-  //   scrollbar: true,
-  // });
-  // swiper.disable();
-
-  // const options = { threshold: [0.9] };
-  // const wellObserver = new IntersectionObserver(swiperEnable, options);
-  // const wellCem = document.querySelector('.well-cem');
-  
-  // function swiperEnable(entry) {
-  //   entry.forEach(item => {
-  //     // console.log(item);
-  //     if (item.isIntersecting) {
-  //       swiper.enable();
-  //     } else {
-  //       swiper.disable();
-  //     }
-  //   });
-  // }
-  
-  // wellObserver.observe(wellCem);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -221,4 +163,40 @@ $(document).ready(function () {
       ease: 'power3.inOut',
     })
   });
+
+  // mobile vs desctop
+  if (!$(".well-cem").data("platform")) {
+		screen.width < 769
+			? $(".well-cem").data("platform", "mobile")
+			: $(".well-cem").data("platform", "desktop");
+	}
+
+  if (screen.width > 769) {
+    gsap.set(allTrigger, {height:1000});
+    ScrollTrigger.refresh();
+
+  } else {
+    gsap.set(allTrigger, {height:500});
+    ScrollTrigger.refresh();
+  }
+
+  $(window).resize(function () {
+		changeWellSlider();
+	});
+
+  function changeWellSlider() {
+    if (screen.width < 769) {
+      if ($('.well-cem').data('platform') != 'desktop') return;
+      $(".well-cem").data("platform", "mobile");
+
+      gsap.set(allTrigger, {height:500});
+      ScrollTrigger.refresh();
+    } else {
+      if ($('.well-cem').data('platform') != 'mobile') return;
+      $(".well-cem").data("platform", "desktop");
+
+      gsap.set(allTrigger, {height:1000});
+      ScrollTrigger.refresh();
+    }
+  }
 });
