@@ -301,6 +301,7 @@ $(document).ready(function () {
   });
 
   if (screen.width > 769) {
+    ScrollTrigger.refresh();
     landRigsSwiper = new Swiper('.land-rigs__info-slider', {
       modules: [Mousewheel],
       slidesPerView: 1,
@@ -362,6 +363,7 @@ $(document).ready(function () {
       });
       
       ScrollTrigger.enable();
+      ScrollTrigger.refresh();
     }
   }
 
