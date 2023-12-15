@@ -18,6 +18,7 @@ import './js/utils/jquery.twentytwenty';
 import './js/pages/home-page';
 import './js/pages/news';
 import './js/pages/drilling-page';
+import './js/pages/well_cementing';
 import './js/pages/mpd';
 import './js/pages/about_us';
 import './js/pages/career';
