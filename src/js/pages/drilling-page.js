@@ -203,8 +203,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   if (!document.querySelector('.land-rigs')) return;
 
-  console.log('land');
-
   const landRigs = document.querySelector('.land-rigs');
   let landRigsSwiper;
 
@@ -217,7 +215,6 @@ $(document).ready(function () {
   const sections = gsap.utils.toArray('.land-rigs__item-text');
   const quant = sections.length;
   const scrollStep = 350;
-  console.log(quant * scrollStep);
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.land-rigs',
@@ -261,7 +258,7 @@ $(document).ready(function () {
         toggleActions: "play none none reverse",
         // preventOverlaps: true,
         //fastScrollEnd: true
-        markers: true,
+        // markers: true,
       }
     })
     .to(section, {
@@ -278,7 +275,7 @@ $(document).ready(function () {
         toggleActions: "play none none reverse",
         // preventOverlaps: true,
         //fastScrollEnd: true
-        markers: true,
+        // markers: true,
       }
     })
     .to(allSections[i], {
@@ -293,7 +290,7 @@ $(document).ready(function () {
         trigger: allTrigger[i],
         start:"top top",
         toggleActions: "play none none reverse",
-        markers: true,
+        // markers: true,
       }
     })
     .to(allPhotosNotFirst[i], {
