@@ -82,6 +82,8 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
 $(document).ready(function () {
   if (!document.querySelector('.well-cem')) return;
 
+  console.log('well');
+
   const wrapper = document.querySelector('.well-cem__display');
   let duration = 4,
   sections = gsap.utils.toArray('.well-cem__item');
