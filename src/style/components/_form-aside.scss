@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 63rem;
+    width: 48rem;
     @include media-screen {
       width: 100%;
       margin-bottom: 4rem;
@@ -45,8 +45,8 @@
     color: $text-color;
     @include media-screen {
       width: 61rem;
-      order: 2;
-      margin: 0;
+      // order: 2;
+      margin: 0 0 4rem 0;
     }
   }
   &__item {
@@ -134,11 +134,11 @@
     margin: 6rem 0 0rem;
     @include media-screen {
       width: 100%;
-      margin: 0;
+      margin: 0 0 4rem;
     }
   }
-  .feedback__comment-block .form__input {
-    min-height: 6rem;
-    height: 6rem;
-  }
+  // .feedback__comment-block .form__input {
+  //   min-height: 6rem;
+  //   height: 6rem;
+  // }
 }

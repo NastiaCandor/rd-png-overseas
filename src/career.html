@@ -277,8 +277,8 @@
       <div class="container">
         <div class="questions__wrapper">
           <p class="questions__title genl-h2-title">contact us</p>
+          <p class="questions__subtitle genl-text-reg">Check the list of open positions or submit your resume and we will contact you if we have an offer that matches your qualifications. Or contact us in any convenient way</p>
           <div class="questions__list">
-            <p class="questions__subtitle genl-text-reg">Check the list of open positions or submit your resume and we will contact you if we have an offer that matches your qualifications. Or contact us in any convenient way</p>
             <div class="questions__item questions__item_address">
               <p class="questions__type">Address</p>
               <p class="questions__detail genl-text-reg">Russian Federation, 127015, Moscow, st. Butyrskaya, 77, Business center “DIAGONAL HOUSE”</p>
@@ -295,7 +295,7 @@
           </div>
 
         </div>
-        <form method="post" action="" class="feedback__form form" id="feedback">
+        <form method="post" action="" class="feedback__form form" id="form-resume">
           <div class="form__block feedback__name-block">
             <label for="name" class="form__label">Your name<span>*</span></label>
             <input name="name" type="text" class="form__input">
@@ -314,9 +314,14 @@
             <input name="email" type="email" class="form__input">
             <div class="form__error-msg">Field must be filled in</div>
           </div>
-          <div class="form__block feedback__comment-block">
-            <label for="comment" class="form__label">Your message<span>*</span></label>
-            <textarea name="comment" type="text" class="form__input"></textarea>
+          <div class="form__block feedback__resume-block">
+            <p class="form__label">Resume<span>*</span>
+            </p>
+            <label class="form__label-file form__input">
+              <p class="feedback__resume-label">Attach a resume</p>
+              <p class="feedback__resume-file"></p>
+              <input name="resume" type="file" class="form__input_resume"></input>
+            </label>
             <div class="form__error-msg">Field must be filled in</div>
           </div>
           <p class="form__subtitle feedback__subtitle genl-text-reg">By clicking the button, you <a href="#">consent to the processing of personal data.</a></p>

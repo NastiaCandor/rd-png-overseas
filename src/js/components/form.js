@@ -2,7 +2,7 @@ import $ from "jquery";
 
 document.addEventListener("DOMContentLoaded", function () {
   if (!document.querySelector('.form')) return;
-  $('.feedback__tel-block').children('.form__input').mask('+0(000) 000-00-00');
+  $('.feedback__tel-block').children('.form__input').mask('(000) 000-00-00');
 
   $('#feedback').submit(function(e) {
     e.preventDefault();
@@ -14,9 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 
+  $('#form-resume').submit(function(e) {
+    e.preventDefault();
+    if (!validateResumeForm()) {
+      return false;
+    } else {
+      $('.modal-thanks').addClass('active');
+      return false;
+    }
+  })
+
   if (document.querySelector('#feedback')) validateFeedbackRealtimeForm();
 
-  // if (document.querySelector('#resume')) validateResumeForm();
+  if (document.querySelector('#form-resume')) validateResumeRealtimeForm();
 });
 
   // Feedback form validation
@@ -33,6 +43,20 @@ function validateFeedbackRealtimeForm() {
   const commentMsg = $('.feedback__comment-block').children('.form__error-msg');
   validationInputRealtimeQuestion(comment, commentMsg, validateComment);
 
+}
+
+function validateResumeRealtimeForm() {
+  const name = $('.feedback__name-block').children('.form__input');
+  const nameMsg = $('.feedback__name-block').children('.form__error-msg');
+  validationInputRealtimeQuestion(name, nameMsg, validateName);
+
+  const email = $('.feedback__email-block').children('.form__input');
+  const emailMsg = $('.feedback__email-block').children('.form__error-msg');
+  validationInputRealtimeQuestion(email, emailMsg, validateEmail);
+
+  const resume = $('.feedback__resume-block').find('.form__input_resume');
+  const resumeMsg = $('.feedback__resume-block').children('.form__error-msg');
+  validationFileInputChange(resume, resumeMsg);
 }
 
 function validateFeedbackForm() {
@@ -53,7 +77,19 @@ function validateFeedbackForm() {
 
 // Vacancy form validation
 function validateResumeForm() {
+  const name = $('.feedback__name-block').children('.form__input');
+  const nameMsg = $('.feedback__name-block').children('.form__error-msg');
+  const nameVal = validationInputQuestion(name, nameMsg, validateName);
 
+  const email = $('.feedback__email-block').children('.form__input');
+  const emailMsg = $('.feedback__email-block').children('.form__error-msg');
+  const emailVal = validationInputQuestion(email, emailMsg, validateEmail);
+
+  const resume = $('.feedback__resume-block').find('.form__input_resume');
+  const resumeMsg = $('.feedback__resume-block').children('.form__error-msg');
+  const resumeVal = validationInputQuestion(resume, resumeMsg, validationFileInput);
+
+  return (nameVal && emailVal && resumeVal);
 }
 
 function validationInputRealtimeQuestion(input, msg, validate) {
@@ -86,6 +122,22 @@ function validationInputQuestion(input, msg, validate) {
   input.addClass('active');
   msg.addClass('active');
   return false;
+}
+
+function validationFileInputChange(input, msg) {
+  input.on('change', function() {
+    let file = this.files[0];
+    if (file) {
+      input.removeClass('active');
+      msg.removeClass('active');
+      $('.feedback__resume-block').find('.feedback__resume-file').html(file.name);
+      $('.feedback__resume-block').find('.feedback__resume-label').html('');
+    }
+  });
+}
+
+function validationFileInput(input) {
+  return $('.feedback__resume-file').html().length > 0;
 }
 
 function validateTel(input) {
