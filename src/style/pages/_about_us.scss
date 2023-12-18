@@ -239,6 +239,10 @@
       width: 45rem;
       z-index: -2;
       background: $contrast-color;
+      @include media-screen {
+        height: 0.2rem;
+        width: 35rem;
+      }
     }
     &::after {
       content: '';
@@ -248,8 +252,12 @@
       left: 0;
       height: 0.15rem;
       width: 32rem;
-      z-index: -1;
+      z-index: -2;
       background: $border-gradient;
+      @include media-screen {
+        height: 0.2rem;
+        width: 31rem;
+      }
     }
     &:last-child {
       &::before {
