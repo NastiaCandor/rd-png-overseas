@@ -68,6 +68,9 @@
     @include media-screen {
       height: 56rem;
     }
+    &-title {
+      margin-bottom: 4rem;
+    }
   }
   &__display {
     flex-direction: column;
