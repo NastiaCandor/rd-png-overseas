@@ -125,9 +125,6 @@
 .feedback_contact-side {
   .questions__title {
     padding-bottom: 4rem;
-    @include media-screen {
-      display: none;
-    }
   }
   .questions__wrapper {
     justify-content: flex-start;
