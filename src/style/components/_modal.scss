@@ -121,6 +121,9 @@
       img {
         display: none;
       }
+      @include media-screen {
+        display: none;
+      }
     }
     &.modal-person_woman {
       
