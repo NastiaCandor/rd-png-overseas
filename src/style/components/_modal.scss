@@ -305,3 +305,25 @@
     }
   }
 }
+
+.modal-code {
+  .modal__inner {
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(149deg, #272727 -11.32%, #3F2E50 9.74%, #272727 41.3%, #272727 63.22%);
+  }
+  .modal__content {
+    padding: 8rem 2rem 2rem;
+  }
+  .modal__close {
+    top: 6rem;
+    right: 0rem;
+    &::after {
+      display: none;
+    }
+  }
+  &__title {
+    margin-bottom: 6.4rem;
+  }
+}

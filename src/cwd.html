@@ -61,8 +61,35 @@
             <input name="organization" type="text" class="form__input">
           </div>
           <div class="form__block feedback__tel-block">
-            <label for="tel" class="form__label">Phone</label>
-            <input name="tel" type="tel" class="form__input">
+            <p class="form__label">Phone</p>
+            <div class="form__tel-wrapper genl-text-reg">
+              <div class="form__code-box">
+                <span class="form__code-value tel-code-open">+750</span>
+                <input type="text" class="form__code-input" value="+750">
+                <div class="form__code-drop">
+                  <div class="form__code-card">
+                    <div class="form__code-search-box">
+                      <input type="text" class="form__code-search" placeholder="Search">
+                    </div>
+                    <ul class="form__code-list">
+                      <li class="form__code-item"><span>+355</span>Albania</li>
+                      <li class="form__code-item"><span>+321</span>Aljeria</li>
+                      <li class="form__code-item"><span>+684</span>American Samoa</li>
+                      <li class="form__code-item"><span>376</span>Andorra</li>
+                      <li class="form__code-item"><span>+1-264</span>Angullia</li>
+                      <li class="form__code-item"><span>+1-264</span>Angullia</li>
+                      <li class="form__code-item"><span>+1-264</span>Angullia</li>
+                      <li class="form__code-item"><span>+1-264</span>Angullia</li>
+                      <li class="form__code-item"><span>+1-264</span>Angullia</li>
+                      <li class="form__code-item"><span>+1-264</span>Angullia</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="form__tel-box">
+                <input type="tel" class="form__tel-input" placeholder="(123)456-78-90">
+              </div>
+            </div>
           </div>
           <div class="form__block feedback__email-block">
             <label for="email" class="form__label">E-mail<span>*</span></label>
@@ -87,6 +114,33 @@
       </div>
     </section>
   </main>
+  <div class="modal modal-code">
+    <div class="modal__inner">
+      <div class="modal__content">
+        <div class="modal__close">
+          <img src="./assets/images/burger-close-icon.svg" alt="x" class="modal__close-icon">
+        </div>
+        <p class="modal-code__title genl-h2-title">Country code</p>
+        <div class="modal__code-wrapper genl-text-reg">
+          <div class="form__code-search-box">
+            <input type="text" class="form__code-search" placeholder="Search">
+          </div>
+          <ul class="form__code-list">
+            <li class="form__code-item"><span>+355</span>Albania</li>
+            <li class="form__code-item"><span>+321</span>Aljeria</li>
+            <li class="form__code-item"><span>+684</span>American Samoa</li>
+            <li class="form__code-item"><span>376</span>Andorra</li>
+            <li class="form__code-item"><span>+1-264</span>Angullia</li>
+            <li class="form__code-item"><span>+1-264</span>Angullia</li>
+            <li class="form__code-item"><span>+1-264</span>Angullia</li>
+            <li class="form__code-item"><span>+1-264</span>Angullia</li>
+            <li class="form__code-item"><span>+1-264</span>Angullia</li>
+            <li class="form__code-item"><span>+1-264</span>Angullia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <include src="./components/footer.html"></include>
 </body>
 </html>

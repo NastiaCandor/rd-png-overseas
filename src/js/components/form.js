@@ -2,7 +2,7 @@ import $ from "jquery";
 
 document.addEventListener("DOMContentLoaded", function () {
   if (!document.querySelector('.form')) return;
-  $('.feedback__tel-block').children('.form__input').mask('(000) 000-00-00');
+  $('.feedback__tel-block').find('.form__tel-input').mask('(000) 000-00-00');
 
   $('#feedback').submit(function(e) {
     e.preventDefault();
@@ -156,3 +156,59 @@ function validateName(input) {
 function validateComment(input) {
   return input.val().length > 10;
 }
+
+// tel code dropmenu display
+document.addEventListener("DOMContentLoaded", function () {
+  if (!document.querySelector('.form')) return;
+  $('.tel-code-open').click(function() {
+    if (screen.width > 769) {
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $('.form__code-drop').slideUp(300);
+      } else {
+        $(this).addClass('active');
+        $('.form__code-drop').slideDown(300);
+      }
+    } else {
+      $('.modal-code').addClass('active');
+      $(document.body).css('overflow', 'hidden');
+    }
+  });
+});
+
+// tel code functionality
+document.addEventListener("DOMContentLoaded", function () {
+  if (!document.querySelector('.form')) return;
+  $('.form__code-list').click(function(e) {
+    if (!e.target.classList.contains('form__code-list')) {
+      const target = e.target;
+      const code = (target.classList.contains('form__code-item')) ? target.children[0].textContent : target.textContent;
+      $('.form__code-value').text(code);
+      $('.form__code-input').val(code);
+      if (screen.width > 769) {
+        $('.tel-code-open').removeClass('active');
+        $('.form__code-drop').slideUp(300);
+      } else {
+        $('.modal-code').removeClass('active');
+      }
+    }
+  });
+
+  $('.modal-code').find('.modal__close').click(function() {
+    $('.modal-code').removeClass('active');
+    $(document.body).css('overflow', 'auto');
+  });
+
+
+  $(window).resize(function () {
+		hideModal();
+	});
+
+  function hideModal() {
+    if (screen.width > 768) {
+      if (!$('.modal-code').hasClass('active')) return;
+      $('.modal-code').removeClass('active');
+      $(document.body).css('overflow', 'auto');
+    }
+  }
+});
