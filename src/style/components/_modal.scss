@@ -29,6 +29,8 @@
     transition: transform 500ms, opacity 250ms;
   }
   &__close {
+    @include octagon-bg(0.5rem, 0rem);
+    left: auto;
     display: block;
     position: absolute;
     top: 8rem;
@@ -41,6 +43,12 @@
     height: 5.6rem;
     padding: 2rem;
     z-index: 1;
+
+    background: transparent;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.40);;
+    }
     @include media-screen {
       width: 8rem;
       height: 8rem;

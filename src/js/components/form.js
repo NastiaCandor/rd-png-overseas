@@ -2,7 +2,7 @@ import $ from "jquery";
 
 document.addEventListener("DOMContentLoaded", function () {
   if (!document.querySelector('.form')) return;
-  $('.feedback__tel-block').children('.form__input').mask('+7(000) 000-00-00');
+  $('.feedback__tel-block').children('.form__input').mask('+0(000) 000-00-00');
 
   $('#feedback').submit(function(e) {
     e.preventDefault();

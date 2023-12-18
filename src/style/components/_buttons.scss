@@ -65,6 +65,11 @@
   letter-spacing: normal;
   border-bottom: solid #FFF 0.4rem;
   color: #FFF;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  &:hover {
+    color: $contrast-color;
+    border-bottom: solid $contrast-color 0.4rem;
+  }
   @include media-screen {
     font-size: 2.8rem;
     line-height: 150%;
@@ -80,21 +85,20 @@
   align-items: center;
   gap: 2rem;
   padding: 0.8rem 0;
-  &::after {
-    content: '';
-    display: block;
+  transition: color 0.3s ease;
+  &:hover {
+    color: $contrast-color;
+  }
+  svg {
     width: 2rem;
     height: 1rem;
-    background-image: url(./assets/images/btn-arrow.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
   @include media-screen {
     font-size: 2.8rem;
     line-height: 143%;
     letter-spacing: 0.07rem;
     gap: 3rem;
-    &::after {
+    svg {
       width: 3rem;
       height: 1.5rem;
     }

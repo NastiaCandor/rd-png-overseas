@@ -325,18 +325,17 @@
     }
     &-link {
       opacity: 0;
-      transition-property: opacity;
+      transition-property: opacity, color;
       @include home-slide-transition;
       margin-top: auto;
       display: flex;
       align-items: center;
       gap: 2rem;
-      &::after {
-        content: '';
-        display: block;
-        background-image: url(./assets/images/btn-arrow.svg);
-        background-repeat: no-repeat;
-        background-size: 100%;
+      color: #FFF;
+      &:hover {
+        color: $contrast-color;
+      }
+      svg {
         width: 2rem;
         height: 0.9rem;
         @include media-screen {
