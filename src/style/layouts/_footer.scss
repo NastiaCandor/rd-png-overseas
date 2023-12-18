@@ -51,7 +51,7 @@
     }
   }
   &__contact-btn {
-    margin-left: -11rem;
+    // margin-left: -11rem;
     align-self: center;
     @include media-screen {
       grid-row: 1 / 2;
@@ -60,12 +60,13 @@
     }
   }
   &__logo {
-    width: 7rem;
-    height: 8.7rem;
+    width: 8.5rem;
+    height: 10.8rem;
     @include media-screen {
       grid-row: 1 / 2;
       grid-column: 1 / 2;
       width: 6rem;
+      height: 6.8rem;
       margin-top: 1rem;
     }
   }
