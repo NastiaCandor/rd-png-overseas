@@ -263,6 +263,11 @@
       &::before {
         right: 12rem;
         width: 34rem;
+        @include media-screen {
+          height: 0.2rem;
+          width: 35rem;
+          right: 4rem;
+        }
       }
     }
   }
