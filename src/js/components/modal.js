@@ -9,12 +9,10 @@ $(document).ready(function () {
   const closeModalBtn = document.querySelector('.modal__close')
   
   const closeModal = () => {
-    // document.body.classList.remove('_lock');
     personModal.classList.remove('active');
   };
   
   const openPersonModal = (item) => {
-    // document.body.classList.add('_lock');
     const type = item.attr('data-people');
     const imgBox = item.children('.people__item-photo-box');
     let src;
@@ -62,18 +60,13 @@ $(document).ready(function () {
   const closeModalBtn = $('.modal-thanks').find('.modal__close');
   
   const closeModal = () => {
-    // document.body.classList.remove('_lock');
     thanksModal.classList.remove('active');
   };
   
   const openPersonModal = (item) => {
-    // document.body.classList.add('_lock');
     thanksModal.classList.add('active');
   };
   
-  // $('.people-open-modal').click(function() {
-  //   openPersonModal($(this));
-  // });
   
   closeModalBtn.click(function() {
     closeModal();

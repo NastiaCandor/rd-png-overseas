@@ -121,11 +121,11 @@ $(document).ready(function () {
   // view all btn
   $('.about-adv__item-view-all').click(function() {
     if ($(this).hasClass('hide')) {
-      $(this).siblings('.about-adv__item-text').removeClass('show');
+      $(this).siblings('.about-adv__item-info-more').removeClass('show');
       $(this).removeClass('hide');
       $(this).html('View all');
     } else {
-      $(this).siblings('.about-adv__item-text').addClass('show');
+      $(this).siblings('.about-adv__item-info-more').addClass('show');
       $(this).addClass('hide');
       $(this).html('Hide');
     }

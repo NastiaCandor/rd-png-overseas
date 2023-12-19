@@ -18,25 +18,6 @@ function toRem(length) {
   return (parseInt(length) / rem());
 }
 
-// APPROACH
-// Hide construction img (prev version)
-// $(document).ready(function () {
-//   if (!document.querySelector('.approach__img-card')) return;
-//   const options = { threshold: [0.9] };
-//   const constructObserver = new IntersectionObserver(approachContractionShow, options);
-//   const constructionImg = document.querySelector('.approach__img-card');
-  
-//   function approachContractionShow(entry) {
-//     entry.forEach(img => {
-//       if (img.isIntersecting) {
-//         img.target.classList.add('hidden');
-//       }
-//     });
-//   }
-  
-//   constructObserver.observe(constructionImg);
-// });
-
 // Hide approach img and make before/after
 $(document).ready(function () {
   if (!document.querySelector('.approach__twenty')) return;
@@ -201,13 +182,11 @@ $(document).ready(function () {
 $(document).ready(function () {
   if (!document.querySelector('.plan')) return;
   
-  // const planSection = document.querySelector('.plan');
   const plans = document.querySelectorAll('.plan__graph');
   const graphPrecentList = document.querySelectorAll('.plan__graph-percent');
   const pieDiagramList = document.querySelectorAll('.plan__circle');
   const optionsGraphObserver = { 
     threshold: [0.95],
-    // root: document.querySelector('.plan__graph'),
   };
   const graphObserver = new IntersectionObserver(animateGraphSection, optionsGraphObserver);
   

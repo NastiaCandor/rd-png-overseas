@@ -45,7 +45,6 @@
     color: $text-color;
     @include media-screen {
       width: 61rem;
-      // order: 2;
       margin: 0 0 4rem 0;
     }
   }
@@ -137,8 +136,4 @@
       margin: 0 0 4rem;
     }
   }
-  // .feedback__comment-block .form__input {
-  //   min-height: 6rem;
-  //   height: 6rem;
-  // }
 }

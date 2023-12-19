@@ -20,7 +20,6 @@ $(document).ready(function () {
       pin: true,
       start: 'top top',
       end: () => '+=' + quant * scrollStep,
-      // end: '+=10000',
     }
   });
 
@@ -36,7 +35,6 @@ $(document).ready(function () {
 
   var allLines = gsap.utils.toArray("well-cem__item p");
   var allLinesNotFirst = allLines.slice(1);
-  //gsap.set(allLinesNotFirst, {autoAlpha:0});
 
   // ================
   var allTrigger = gsap.utils.toArray(".trigger");
@@ -52,26 +50,13 @@ $(document).ready(function () {
         trigger: allTrigger[i],
         start:"top -150px",
         toggleActions: "play none none reverse",
-        // preventOverlaps: true,
-        //fastScrollEnd: true
-        // markers: true,
       }
     })
-    // .to(allSections[i], {
-    //   yPercent:-100, 
-    //   duration:0.4, //ease:,
-    //   delay: 0.3,
-    // })
       .to(section, {
       yPercent:0, 
       duration:0.6, //ease:,
       ease: 'power3.inOut',
     })
-    //   .from(allLinesNotFirst[i], {
-    //   y:'+=200', 
-    //   autoAlpha:0, 
-    //   duration:0.5,
-    // },0.3)
   });
   allSectionsNotFirst.forEach((section, i) => {
 
@@ -80,8 +65,6 @@ $(document).ready(function () {
         trigger: allTrigger[i],
         start:"top -150px",
         toggleActions: "play none none reverse",
-        // preventOverlaps: true,
-        //fastScrollEnd: true
       }
     })
     .to(allSections[i], {

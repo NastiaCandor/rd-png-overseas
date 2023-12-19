@@ -1,6 +1,5 @@
 .well-cem {
   padding: 10rem 0 22rem;
-  // margin-top: 9rem;
   @include media-screen {
     padding-bottom: 10rem;
   }
@@ -60,10 +59,8 @@
       grid-column: 1;
       height: 56rem;
     }
-    // scroll-snap-type: y mandatory;
   }
   &__item {
-    // margin: 5rem 0;
     height: 44rem;
     @include media-screen {
       height: 56rem;

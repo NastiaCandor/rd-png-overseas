@@ -101,14 +101,11 @@
     }
     &-value {
       display: flex;
-      // min-width: 8rem;
-      // width: 8rem;
       align-items: center;
       cursor: pointer;
       justify-content: space-between;
       margin-right: 2rem;
       @include media-screen {
-        // min-width: 11.5rem;
         margin-right: 2.5rem;
       }
       &.active ~ .form__code-drop {

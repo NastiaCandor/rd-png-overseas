@@ -309,7 +309,6 @@
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
-    // align-items: center;
     padding: 6rem 4rem 4rem 4rem;
     @include media-screen {
       width: 100%;
@@ -638,6 +637,29 @@
       display: none;
       @include media-screen {
         margin: 0 0 5rem;
+      }
+    }
+    &-info-more {
+      height: 27rem;
+      overflow: hidden;
+      @include media-screen {
+        height: 44rem;
+      }
+      &.show {
+        height: auto;
+        .about-adv__item-text {
+          display: block
+        }
+      }
+    }
+    &-img-box {
+      @include octagon-bg(2rem, 0rem);
+      width: 100%;
+      height: 36rem;
+      margin-top: 4rem;
+      img {
+        height: 100%;
+        object-fit: cover;
       }
     }
     &-text {
