@@ -211,4 +211,50 @@ document.addEventListener("DOMContentLoaded", function () {
       $(document.body).css('overflow', 'auto');
     }
   }
+
+  // SEARCH code
+
+
+
+  $('.form__code-search').on('keyup', function(e) {
+    findMatchStation(e.target.value);
+  });
+  
+  function findMatchStation(val) {
+    if (isNaN(Number(val))) {
+      const options = $('.form__code-list').children('.form__code-item');
+      if (val === '') {
+        for (let i = 0; i < options.length; i++){
+          options[i].classList.remove('hidden');
+        }
+        return;
+      }
+      for (let i = 0; i < options.length; i++){
+        const match = options[i].textContent;
+        if (match.toLowerCase().includes(val.toLowerCase())) {
+          options[i].classList.remove('hidden');
+        } else {
+          options[i].classList.add('hidden');
+        }
+      }
+    } else {
+      const item = $('.form__code-list').children('.form__code-item');
+      const options = $('.form__code-list').find('span');
+      if (val === '') {
+        for (let i = 0; i < options.length; i++){
+          item[i].classList.remove('hidden');
+        }
+        return;
+      }
+      for (let i = 0; i < options.length; i++){
+        const match = options[i].textContent;
+        if (match.toLowerCase().includes(val.toLowerCase())) {
+          item[i].classList.remove('hidden');
+        } else {
+          item[i].classList.add('hidden');
+        }
+      }
+    }
+
+  }
 });
