@@ -281,17 +281,31 @@ $(document).ready(function () {
 // APPROACH mobile text display
 $(document).ready(function () {
   if (!document.querySelector('.approach__view-all')) return;
-  $('.approach__view-all').on('click', () => {
-    $('.approach__text').addClass('display');
-    $('.approach__view-all').hide();
+  $('.approach__view-all').click(function() {
+    if ($(this).hasClass('hide')) {
+      $('.approach__text').removeClass('display');
+      $(this).removeClass('hide');
+      $(this).html('View all');
+    } else {
+      $('.approach__text').addClass('display');
+      $(this).addClass('hide');
+      $(this).html('Hide');
+    }
   });
 });
 
 // PLAN mobile text display
 $(document).ready(function () {
   if (!document.querySelector('.plan__view-all')) return;
-  $('.plan__view-all').on('click', () => {
-    $('.plan__text').addClass('display');
-    $('.plan__view-all').hide();
+  $('.plan__view-all').click(function() {
+    if ($(this).hasClass('hide')) {
+      $('.plan__text').removeClass('display');
+      $(this).removeClass('hide');
+      $(this).html('View all');
+    } else {
+      $('.plan__text').addClass('display');
+      $(this).addClass('hide');
+      $(this).html('Hide');
+    }
   });
 });

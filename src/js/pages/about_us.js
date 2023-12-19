@@ -90,7 +90,13 @@ $(document).ready(function () {
   if (!document.querySelector('.people')) return;
 
   $('.people__view-all-btn').click(function() {
-    $('.people__wrapper').addClass('show');
+    if ($('.people__wrapper').hasClass('show')) {
+      $('.people__wrapper').removeClass('show');
+      $(this).html('View all employees');
+    } else {
+      $('.people__wrapper').addClass('show');
+      $(this).html('Hide');
+    }
   });
 });
 
@@ -113,11 +119,16 @@ $(document).ready(function () {
   });
 
   // view all btn
-  $('.about-adv__item-view-all').click(function(e) {
-    e.preventDefault();
-    $(this).siblings('.about-adv__item-text').addClass('show');
-    // $(this).siblings('.licenses__item-text').slideDown(400);
-    $(this).hide();
+  $('.about-adv__item-view-all').click(function() {
+    if ($(this).hasClass('hide')) {
+      $(this).siblings('.about-adv__item-text').removeClass('show');
+      $(this).removeClass('hide');
+      $(this).html('View all');
+    } else {
+      $(this).siblings('.about-adv__item-text').addClass('show');
+      $(this).addClass('hide');
+      $(this).html('Hide');
+    }
   });
 });
 

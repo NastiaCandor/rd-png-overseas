@@ -147,6 +147,13 @@ $(document).ready(function () {
   $('.vacancies__display').click(function(e) {
     if (!e.target.classList.contains('vacancies__item-view-all')) return;
     const item = e.target.parentElement;
-    item.classList.add('show');
+    const btn = e.target;
+    if (item.classList.contains('show')) {
+      item.classList.remove('show');
+      btn.textContent = 'View all';
+    } else {
+      item.classList.add('show');
+      btn.textContent = 'Hide';
+    }
   });
 });
