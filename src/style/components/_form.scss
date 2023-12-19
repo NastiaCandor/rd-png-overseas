@@ -132,6 +132,11 @@
           height: 2.5rem;
         }
       }
+      &.active {
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
     }
     &-input {
       display: none;

@@ -199,6 +199,15 @@ document.addEventListener("DOMContentLoaded", function () {
     $(document.body).css('overflow', 'auto');
   });
 
+  // close drop menu
+  document.addEventListener('click', (e) => {
+    if (screen.width < 768) return;
+    if ($('.form__code-box').find(e.target).length === 0) {
+      $('.tel-code-open').removeClass('active');
+      $('.form__code-drop').slideUp(300);
+    }
+  });
+
 
   $(window).resize(function () {
 		hideModal();
@@ -213,9 +222,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // SEARCH code
-
-
-
   $('.form__code-search').on('keyup', function(e) {
     findMatchStation(e.target.value);
   });
