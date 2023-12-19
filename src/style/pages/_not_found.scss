@@ -1,5 +1,8 @@
 .not-found {
   padding: 10rem 0 7rem;
+  @include media-screen {
+    padding: 12.5rem 0 13rem;
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -10,6 +13,9 @@
     color: #FFF;
     @include font(36.6rem, 124.5%);
     display: flex;
+    @include media-screen {
+      font-size: 34rem;
+    }
   }
   &__img-box {
     width: 44rem;
@@ -17,11 +23,21 @@
     opacity: 0.5;
     mix-blend-mode: lighten;
     margin: 0 -14rem 0 -4rem;
+    @include media-screen {
+      width: 47rem;
+    }
   }
   &__subtitle {
     margin-top: -5rem;
+    @include media-screen {
+      font-size: 6.8rem;
+      margin-top: 11rem;
+    }
   }
   &__home-link {
     margin-top: 10rem;
+    @include media-screen {
+      margin-top: 7rem;
+    }
   }
 }
