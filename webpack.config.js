@@ -25,6 +25,7 @@ const entryPoints = {
   pms: path.resolve(__dirname, "src", "index.js"),
   about_us: path.resolve(__dirname, "src", "index.js"),
   career: path.resolve(__dirname, "src", "index.js"),
+  not_found: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 

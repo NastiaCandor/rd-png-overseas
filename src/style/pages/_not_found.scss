@@ -1,0 +1,27 @@
+.not-found {
+  padding: 10rem 0 7rem;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    font-family: "Julius Sans One";
+    color: #FFF;
+    @include font(36.6rem, 124.5%);
+    display: flex;
+  }
+  &__img-box {
+    width: 44rem;
+    height: 40rem;
+    opacity: 0.5;
+    mix-blend-mode: lighten;
+    margin: 0 -14rem 0 -4rem;
+  }
+  &__subtitle {
+    margin-top: -5rem;
+  }
+  &__home-link {
+    margin-top: 10rem;
+  }
+}
