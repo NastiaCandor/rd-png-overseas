@@ -208,6 +208,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Insert vacancy to form
+  $('.vacancies__display').click(function(e) {
+    if (e.target.classList.contains('vacancies__item-resp-btn')) {
+      const vacancy = e.target.parentElement.previousElementSibling.querySelector('.vacancies__item-title').textContent;
+      $('.feedback__vacancy-block').find('.form__input').val(vacancy);
+    }
+  });
 
   $(window).resize(function () {
 		hideModal();
