@@ -1,8 +1,4 @@
 import "./index.scss";
-import 'swiper/css/bundle';
-
-// Default theme
-import '@splidejs/splide/css';
 
 // COMPONENTS
 import './js/components/burger';
