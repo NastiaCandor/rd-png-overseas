@@ -770,19 +770,23 @@
       repeatPeriod: 200
     }));
 
-
+    const highlitedCountries = ['Afghanistan', 'Belarus', 'Czechia', 'Austria', 'China'];
 
     const colorInterpolator = t => `rgba(255,112,112,${1-t})`;
 
     fetch('//unpkg.com/three-globe/example/country-polygons/ne_110m_admin_0_countries.geojson').then(res => res.json()).then(countries =>
   {
+    console.log(countries);
     const Globe = new ThreeGlobe({
       waitForGlobeReady: true,
       animateIn: true,
     })
       .showAtmosphere(true)
       .polygonsData(countries.features.filter(d => d.properties.ISO_A2 !== 'AQ'))
-      .polygonCapColor(() => 'rgba(22, 22, 139, 0.7)')
+      // .polygonCapColor(() => 'rgba(22, 22, 139, 0.7)')
+      .polygonCapColor((e) => {
+        return (highlitedCountries.includes(e.properties.BRK_NAME) ) ? 'rgba(186, 119, 253, 0.7)' : 'rgba(22, 22, 139, 0.7)';
+      })
       .polygonSideColor(() => 'rgba(163, 0, 255, 0.1)')
       .polygonStrokeColor(() => '#50b0ff')
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
@@ -791,8 +795,8 @@
       .ringColor(() => colorInterpolator)
       .ringMaxRadius('maxR')
       .ringPropagationSpeed('propagationSpeed')
-      .ringAltitude(0.003)
-      .polygonAltitude(0.0029)
+      .ringAltitude(0.004)
+      .polygonAltitude(0.0035)
       .ringRepeatPeriod('repeatPeriod');
 
     // Setup renderer
@@ -835,8 +839,8 @@
     controls.zoomSpeed = 1;
     controls.autoRotate = false;
 
-    controls.minPolarAngle = Math.PI / 3.5;
-    controls.maxPolarAngle = Math.PI - Math.PI / 3;
+    controls.minPolarAngle = Math.PI / 3.3;
+    controls.maxPolarAngle = Math.PI - Math.PI / 1.5;
 
     // Kick-off renderer
     (function animate() { // IIFE
