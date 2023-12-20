@@ -752,8 +752,10 @@
     // let windowHalfY = window.innerHeight / 2;
 
     const wrapper = document.querySelector('.main-banner__planet');
-    const wrapperWidth = wrapper.offsetWidth;
-    const wrapperHeight = wrapper.offsetHeight;
+    // const wrapperWidth = wrapper.offsetWidth;
+    // const wrapperHeight = wrapper.offsetHeight;
+    const wrapperWidth = 930;
+    const wrapperHeight = 770;
     let windowHalfX = wrapperWidth / 2;
     let windowHalfY = wrapperHeight / 2;
 
@@ -804,11 +806,11 @@
     renderer.setSize(wrapperWidth, wrapperHeight);
     document.getElementById('globeViz').appendChild(renderer.domElement);
 
-    window.addEventListener("resize", () => {
-      const newWidth = wrapper.offsetWidth;
-      const newHeight = wrapper.offsetHeight;
-      renderer.setSize(newWidth, newHeight);
-    });
+    // window.addEventListener("resize", () => {
+    //   const newWidth = wrapper.offsetWidth;
+    //   const newHeight = wrapper.offsetHeight;
+    //   renderer.setSize(newWidth, newHeight);
+    // });
 
     // Setup scene
     const scene = new THREE.Scene();

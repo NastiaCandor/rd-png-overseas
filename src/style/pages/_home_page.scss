@@ -1045,4 +1045,17 @@
 // PLANET
 #globeViz {
   z-index: -1;
+
+  @include media-screen {
+    right: auto;
+    left: 4rem;
+  }
+  canvas {
+    width: 93rem !important;
+    height: 77rem !important;
+    @include media-screen {
+      width: 64rem !important;
+      height: 53rem !important;
+    }
+  }
 }
