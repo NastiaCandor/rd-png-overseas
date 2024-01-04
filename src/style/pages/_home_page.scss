@@ -1,7 +1,8 @@
 .main-banner {
-  margin: 17rem 0 22rem;
+  padding: 17rem 0 22rem;
+  overflow: hidden;
   @include media-screen {
-    margin: 9rem 0 22rem;
+    padding: 9rem 0 22rem;
   }
   .container {
     position: relative;
@@ -100,14 +101,14 @@
     mix-blend-mode: color-dodge;
     position: absolute;
     height: 77rem;
-    top: -10rem;
-    right: -15rem;
+    top: -12rem;
+    right: -20rem;
     @include media-screen {
       position: relative;
-      top: 0;
+      top: -2rem;
       right: 0;
       width: 66rem;
-      height: 60rem;
+      height: 58rem;
       margin: 11rem 0 0;
     }
   }
