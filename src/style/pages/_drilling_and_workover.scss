@@ -71,9 +71,54 @@
     width: 62.6rem;
     height: 57rem;
     position: relative;
+    width: 76rem;
+    height: 56.4rem;
     @include media-screen {
       width: 100%;
-      height: 64rem;
+      height: 53rem;
+    }
+    &-top {
+      position: absolute;
+      top: 2.5rem;
+      left: 2.5rem;
+      width: 71rem;
+      -webkit-mask-image: url(./assets/images/operators-img-mask.svg);
+      mask-image: url(./assets/images/operators-img-mask.svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      @include media-screen {
+        width: 100%;
+        height: 47rem;
+      }
+    }
+    &-bottom {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 1rem;
+      width: 61rem;
+      -webkit-mask-image: url(./assets/images/operators-vect-mask.svg);
+      mask-image: url(./assets/images/operators-vect-mask.svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      @include media-screen {
+        width: 57rem;
+        height: 34rem;
+        right: 2rem;
+      }
+    }
+    &-bottom-bg {
+      position: absolute;
+      bottom: 2rem;
+      right: 2.5rem;
+      width: 60rem;
+      @include media-screen {
+        width: 57rem;
+        height: 34rem;
+      }
     }
   }
   &__img {
@@ -239,7 +284,7 @@
     position: relative;
     @include media-screen {
       width: 100%;
-      height: 48rem;
+      height: 60rem;
       margin-bottom: 6.2rem;
     }
     img {
@@ -318,6 +363,20 @@
     position: relative;
     width: 89rem;
     height: 60rem;
+    .cwd-banner__img-box {
+      width: 84rem;
+      height: 63rem;
+      margin: 0;
+    }
+    .cwd-banner__img-box-top {
+      width: 79rem;
+    }
+    .cwd-banner__img-box-bottom-bg {
+      width: 79.5rem;
+    }
+    .cwd-banner__img-box-bottom {
+      width: 78.5rem;
+    }
   }
   .land-rigs__info-text-wrapper {
     width: 63rem;

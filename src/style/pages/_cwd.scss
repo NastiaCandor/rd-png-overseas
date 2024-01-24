@@ -49,32 +49,53 @@
       gap: 5rem;
     }
   }
-  &__photo {
+  &__img-box {
     margin-top: 5rem;
     position: relative;
-    width: 62.6rem;
-    height: 77.7rem;
+    width: 75rem;
+    height: 56rem;
     grid-row: 1 / 12;
     grid-column: 2;
     @include media-screen {
       width: 100%;
       margin-top: 6.5rem;
-      height: 41.7rem;
+      height: 53.7rem;
     }
-    img {
-      height: 100%;
-      object-fit: cover;
-    }
-    .octagon-card {
-      @include octagon-bg(2.5rem, 2.5rem);
+    &-top {
+      position: absolute;
+      top: 2.5rem;
+      left: 2.5rem;
+      width: 71rem;
+      -webkit-mask-image: url(./assets/images/cwd__img-top-mask.svg);
+      mask-image: url(./assets/images/cwd__img-top-mask.svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
       @include media-screen {
-        @include octagon-bg(2rem, 2.5rem);
+        width: 100%;
+        height: 35rem;
       }
     }
-    .octagon-card-border {
-      @include octagon-border(2.5rem);
+    &-bottom {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      width: 68.5rem;
       @include media-screen {
-        @include octagon-border(2.5rem);
+        width: 62rem;
+        height: 50rem;
+        right: 2rem;
+      }
+    }
+    &-bottom-bg {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      width: 70.5rem;
+      @include media-screen {
+        width: 66rem;
+        height: 31rem;
       }
     }
   }
