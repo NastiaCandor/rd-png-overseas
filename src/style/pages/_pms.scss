@@ -34,7 +34,7 @@
       gap: 5rem;
     }
   }
-  &__photo {
+  &__img-box {
     position: relative;
     width: 62.6rem;
     height: 77.7rem;
@@ -45,20 +45,82 @@
       margin-top: 6.5rem;
       height: 41.7rem;
     }
-    img {
-      height: 100%;
-      object-fit: cover;
-    }
-    .octagon-card {
-      @include octagon-bg(2.5rem, 2.5rem);
+    &-top {
+      position: absolute;
+      top: 2.5rem;
+      left: 2.5rem;
+      width: 57.6rem;
+      -webkit-mask-image: url(./assets/images/pms__img-top-mask.svg);
+      mask-image: url(./assets/images/pms__img-top-mask.svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
       @include media-screen {
-        @include octagon-bg(2rem, 2.5rem);
+        width: 66rem;
+        height: 51rem;
+        -webkit-mask-image: url(./assets/images/operators-img-mask.svg);
+        mask-image: url(./assets/images/operators-img-mask.svg);
       }
     }
-    .octagon-card-border {
-      @include octagon-border(2.5rem);
+    &-bottom {
+      position: absolute;
+      bottom: 1rem;
+      right: 2rem;
+      width: 59.5rem;
       @include media-screen {
-        @include octagon-border(2.5rem);
+        width: 58rem;
+        height: 37rem;
+        bottom: -12rem;
+        right: 2rem;
+        -webkit-mask-image: url(./assets/images/operators-vect-mask.svg);
+        mask-image: url(./assets/images/operators-vect-mask.svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        overflow: hidden;
+        img {
+          height: auto;
+          width: 85rem;
+          position: absolute;
+          top: -4rem;
+          right: 0;
+        }
+      }
+    }
+    &-bottom-bg {
+      position: absolute;
+      bottom: 1rem;
+      right: 2rem;
+      width: 56.5rem;
+      @include media-screen {
+        width: 58rem;
+        height: 24rem;
+      }
+      .desc {
+        @include media-screen {
+          display: none;
+        }
+      }
+      .mob {
+        display: none;
+        @include media-screen {
+          display: block;
+        }
+      }
+    }
+    &-borders {
+      .desc {
+        @include media-screen {
+          display: none;
+        }
+      }
+      .mob {
+        display: none;
+        @include media-screen {
+          display: block;
+        }
       }
     }
   }
